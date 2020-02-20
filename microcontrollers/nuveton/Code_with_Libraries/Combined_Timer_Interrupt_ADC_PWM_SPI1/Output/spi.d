@@ -1,0 +1,12 @@
+.\output\spi.o: ..\..\Libraries\MiP_Libraries\SPI\SPI.c
+.\output\spi.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\output\spi.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\output\spi.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\output\spi.o: ..\..\Libraries\Include\M051.h
+.\output\spi.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\spi.o: ..\..\Libraries\Include\Common.h
+.\output\spi.o: ..\..\Libraries\Include\Retarget.h
+.\output\spi.o: ..\..\Libraries\Include\Macro_SystemClock.h
+.\output\spi.o: ..\..\Libraries\Include\Macro_Timer.h
+.\output\spi.o: ..\..\Libraries\MiP_Libraries\SPI\SPI.h
+.\output\spi.o: ..\..\Libraries\MiP_Libraries\SPI\..\Robot_Values\Robot_Values.h

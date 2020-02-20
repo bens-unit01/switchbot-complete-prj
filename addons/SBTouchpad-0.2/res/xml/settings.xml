@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="SwitchBot IP addresses affectation" >
+        <EditTextPreference 
+            	android:title="Set IP for Switchbot 1 - Green" 
+            	android:key="ipSB1"/>
+          <EditTextPreference 
+            	android:title="Set IP for Switchbot 2 - Yellow" 
+            	android:key="ipSB2"/>
+            <EditTextPreference 
+            	android:title="Set IP for Switchbot 3 - Red" 
+            	android:key="ipSB3"/>
+              <EditTextPreference 
+            	android:title="Set IP for Switchbot 4 - Blue" 
+            	android:key="ipSB4"/>
+    </PreferenceCategory>
+    
+  
+
+</PreferenceScreen>

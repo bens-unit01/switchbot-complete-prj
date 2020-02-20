@@ -1,0 +1,109 @@
+
+
+
+// 2 ways communication 
+https://devzone.nordicsemi.com/question/12239/s120-uart-communication/
+https://github.com/NordicSemiconductor/ble_app_uart_c_S120
+https://translate.google.ca/translate?hl=en&sl=zh-CN&u=http://www.eeboard.com/bbs/thread-39512-1-1.html&prev=search
+
+
+
+// 128 bits UUID
+https://devzone.nordicsemi.com/question/634/128-bit-uuids/
+https://devzone.nordicsemi.com/question/639/how-can-i-use-a-vendor-specific-uuid/
+
+// pin numbers 
+// real board -- SwitchBot
+#define RX_PIN_NUMBER   22 // UART RX pin number.
+#define TX_PIN_NUMBER   23 // UART TX pin number.
+#define TX_MEDIA_BOX    3 // UART TX pin number.
+
+// dev board nrf6310
+#define RX_PIN_NUMBER   16 // UART RX pin number.
+#define TX_PIN_NUMBER   17 // UART TX pin number.
+
+// values for fwd_bwd 
+ 0x00 to 0x20 (32)   --> forward 
+ 0x21 to 0x40 (64)   --> backward 
+ // values for lft_rgt 
+ 0x41 to 0x60 (96)   --> turn right 
+ 0x61 to 0x80 (128)  --> turn left  
+ 
+ 
+ // min values 
+ 
+   public static final byte[] ENCODED_DRIVE_FORWARD  = {DRIVE, 0x10, 0};                                     
+   public static final byte[] ENCODED_DRIVE_BACKWARD = {DRIVE, 0x30, 0};                                     
+   public static final byte[] ENCODED_TURN_LEFT      = {DRIVE, 0, 0x70};                                     
+   public static final byte[] ENCODED_TURN_RIGHT     = {DRIVE, 0, 0x50};    
+   
+   
+   // logs fwd_bwd | lft_rgt | left | right | front | back 
+           0           75       0       48      72     0
+           0           67       43      50      73     0                             
+
+
+
+#define IR_CTRL                  0x20
+#define IR_GUN_ON                0x01  cyan 
+#define IR_BACK_ON               0x02  magenta
+#define IR_HEAD_ON               0x03  blue
+#define IR_ALL_ON                0x04  yellow
+#define IR_ALL_OFF               0x05  white
+
+
+
+// pos 01   - facing Head IR
+Head  39 38 56 58
+Gun   0   0  0   0 
+Back  0   0  26  26
+// pos 2 - facing gun IR
+Head  39  5  0  40
+Gun   0   0  0  55
+Back  0   33 38 43
+// pos 3 - facing back IR 
+Head   0  0  0  28
+Gun    0  0  0   0
+Back   41 36 43  55
+
+
+// 180 - facing head IR   
+43-4-11, 43-5-11, 42-3-11, 44-5-11, 42-9-11
+// 135 
+43-16-13, 40-14-13, 43-16-13, 40-14-14
+// 90
+23-14-25, 23-14-26, 23-14-25, 23-15-26
+//45
+16-14-41, 17-14-38, 16-14-42
+//0
+14-0-40, 13-1-41,  41-0-39
+
+
+
+#define NRF_SUCCESS                           (NRF_ERROR_BASE_NUM + 0)  ///< Successful command
+#define NRF_ERROR_SVC_HANDLER_MISSING         (NRF_ERROR_BASE_NUM + 1)  ///< SVC handler is missing
+#define NRF_ERROR_SOFTDEVICE_NOT_ENABLED      (NRF_ERROR_BASE_NUM + 2)  ///< SoftDevice has not been enabled
+#define NRF_ERROR_INTERNAL                    (NRF_ERROR_BASE_NUM + 3)  ///< Internal Error
+#define NRF_ERROR_NO_MEM                      (NRF_ERROR_BASE_NUM + 4)  ///< No Memory for operation
+#define NRF_ERROR_NOT_FOUND                   (NRF_ERROR_BASE_NUM + 5)  ///< Not found
+#define NRF_ERROR_NOT_SUPPORTED               (NRF_ERROR_BASE_NUM + 6)  ///< Not supported
+#define NRF_ERROR_INVALID_PARAM               (NRF_ERROR_BASE_NUM + 7)  ///< Invalid Parameter
+#define NRF_ERROR_INVALID_STATE               (NRF_ERROR_BASE_NUM + 8)  ///< Invalid state, operation disallowed in this state
+#define NRF_ERROR_INVALID_LENGTH              (NRF_ERROR_BASE_NUM + 9)  ///< Invalid Length
+#define NRF_ERROR_INVALID_FLAGS               (NRF_ERROR_BASE_NUM + 10) ///< Invalid Flags
+#define NRF_ERROR_INVALID_DATA                (NRF_ERROR_BASE_NUM + 11) ///< Invalid Data
+#define NRF_ERROR_DATA_SIZE                   (NRF_ERROR_BASE_NUM + 12) ///< Data size exceeds limit
+#define NRF_ERROR_TIMEOUT                     (NRF_ERROR_BASE_NUM + 13) ///< Operation timed out
+#define NRF_ERROR_NULL                        (NRF_ERROR_BASE_NUM + 14) ///< Null Pointer
+#define NRF_ERROR_FORBIDDEN                   (NRF_ERROR_BASE_NUM + 15) ///< Forbidden Operation
+#define NRF_ERROR_INVALID_ADDR                (NRF_ERROR_BASE_NUM + 16) ///< Bad Memory Address
+#define NRF_ERROR_BUSY                        (NRF_ERROR_BASE_NUM + 17) ///< Busy
+
+
+
+ 
+
+
+
+
+

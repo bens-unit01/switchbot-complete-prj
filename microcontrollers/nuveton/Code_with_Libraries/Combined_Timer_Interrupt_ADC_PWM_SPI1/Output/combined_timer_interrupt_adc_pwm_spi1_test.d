@@ -1,0 +1,17 @@
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: Source\Combined_Timer_Interrupt_ADC_PWM_SPI1_test.c
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\Include\M051.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\Include\Common.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\Include\Retarget.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\Include\Macro_SystemClock.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\Include\Macro_Timer.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\System_Clock\System_Clock.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\UART\UART.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\SPI\SPI.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\IMU\IMU.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\Timers\Timers.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\GPIO\GPIO.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\PWM\PWM.h
+.\output\combined_timer_interrupt_adc_pwm_spi1_test.o: ..\..\Libraries\MiP_Libraries\ADC\ADC.h

@@ -1,0 +1,11 @@
+.\output\switchbotmain.o: Source\switchbotMain.c
+.\output\switchbotmain.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\output\switchbotmain.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\output\switchbotmain.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\output\switchbotmain.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\output\switchbotmain.o: ..\..\Libraries\Include\M051.h
+.\output\switchbotmain.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\switchbotmain.o: ..\..\Libraries\Include\Common.h
+.\output\switchbotmain.o: ..\..\Libraries\Include\Retarget.h
+.\output\switchbotmain.o: ..\..\Libraries\Include\Macro_SystemClock.h
+.\output\switchbotmain.o: ..\..\Libraries\Include\Macro_Timer.h

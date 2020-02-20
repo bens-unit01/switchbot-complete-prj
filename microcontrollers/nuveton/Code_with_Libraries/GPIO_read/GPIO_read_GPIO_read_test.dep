@@ -1,0 +1,47 @@
+Dependencies for Project 'GPIO_read', Target 'GPIO_read_test': (DO NOT MODIFY !)
+F (.\Source\GPIO_read_test.c)(0x547F462D)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-o .\output\gpio_read_test.o --omf_browse .\output\gpio_read_test.crf --depend .\output\gpio_read_test.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FEA56E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FEA56E)
+I (..\..\Libraries\Include\M051.h)(0x4C63EDDA)
+I (..\..\Libraries\Include\Register_Bit.h)(0x51E1439C)
+I (..\..\Libraries\Include\Common.h)(0x4BCDB880)
+I (..\..\Libraries\Include\Retarget.h)(0x4BCC2DC6)
+I (..\..\Libraries\MiP_Libraries\System_Clock\System_Clock.h)(0x53FC151F)
+I (..\..\Libraries\MiP_Libraries\UART\UART.h)(0x547F2E1B)
+I (..\..\Libraries\MiP_Libraries\GPIO\GPIO.h)(0x53B0D691)
+F (..\..\Libraries\Common\common.c)(0x4C7206B6)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-o .\output\common.o --omf_browse .\output\common.crf --depend .\output\common.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FEA56E)
+I (..\..\Libraries\Include\M051.h)(0x4C63EDDA)
+I (..\..\Libraries\Include\Register_Bit.h)(0x51E1439C)
+F (..\..\Libraries\Common\retarget.c)(0x4C7206D4)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-o .\output\retarget.o --omf_browse .\output\retarget.crf --depend .\output\retarget.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FEA56E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FEA56E)
+I (..\..\Libraries\Include\M051.h)(0x4C63EDDA)
+I (..\..\Libraries\Include\Register_Bit.h)(0x51E1439C)
+F (..\..\Libraries\Common\startup_M051.s)(0x4C7202EA)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include--list .\listing\startup_m051.lst --xref -o .\output\startup_m051.o --depend .\output\startup_m051.d)
+F (..\..\Libraries\MiP_Libraries\GPIO\GPIO.c)(0x53B0D6BB)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-o .\output\gpio.o --omf_browse .\output\gpio.crf --depend .\output\gpio.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FEA56E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FEA56E)
+I (..\..\Libraries\Include\M051.h)(0x4C63EDDA)
+I (..\..\Libraries\Include\Register_Bit.h)(0x51E1439C)
+I (..\..\Libraries\Include\Common.h)(0x4BCDB880)
+I (..\..\Libraries\Include\Retarget.h)(0x4BCC2DC6)
+I (..\..\Libraries\MiP_Libraries\GPIO\GPIO.h)(0x53B0D691)
+F (..\..\Libraries\MiP_Libraries\System_Clock\System_Clock.c)(0x5404C567)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-o .\output\system_clock.o --omf_browse .\output\system_clock.crf --depend .\output\system_clock.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FEA56E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FEA56E)
+I (..\..\Libraries\Include\M051.h)(0x4C63EDDA)
+I (..\..\Libraries\Include\Register_Bit.h)(0x51E1439C)
+I (..\..\Libraries\Include\Common.h)(0x4BCDB880)
+I (..\..\Libraries\Include\Retarget.h)(0x4BCC2DC6)
+I (..\..\Libraries\MiP_Libraries\System_Clock\System_Clock.h)(0x53FC151F)
+F (..\..\Libraries\MiP_Libraries\UART\UART.c)(0x547F4172)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-o .\output\uart.o --omf_browse .\output\uart.crf --depend .\output\uart.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FEA56E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FEA56E)
+I (..\..\Libraries\Include\M051.h)(0x4C63EDDA)
+I (..\..\Libraries\Include\Register_Bit.h)(0x51E1439C)
+I (..\..\Libraries\Include\Common.h)(0x4BCDB880)
+I (..\..\Libraries\Include\Retarget.h)(0x4BCC2DC6)
+I (..\..\Libraries\MiP_Libraries\UART\UART.h)(0x547F2E1B)
+I (..\..\Libraries\MiP_Libraries\UART\..\Robot_Values\Robot_Values.h)(0x547F4172)
+I (..\..\Libraries\MiP_Libraries\UART\..\System_Clock\System_Clock.h)(0x53FC151F)

@@ -1,0 +1,10 @@
+.\output\encoders.o: ..\..\Libraries\MiP_Libraries\Encoders\Encoders.c
+.\output\encoders.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\output\encoders.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\output\encoders.o: ..\..\Libraries\Include\M051.h
+.\output\encoders.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\encoders.o: ..\..\Libraries\Include\Common.h
+.\output\encoders.o: ..\..\Libraries\Include\Retarget.h
+.\output\encoders.o: ..\..\Libraries\MiP_Libraries\Encoders\Encoders.h
+.\output\encoders.o: ..\..\Libraries\MiP_Libraries\Encoders\..\UART\UART.h
+.\output\encoders.o: ..\..\Libraries\MiP_Libraries\Encoders\..\Robot_Values\Robot_Values.h

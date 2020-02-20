@@ -1,0 +1,10 @@
+.\output\timers.o: ..\..\Libraries\MiP_Libraries\Timers\Timers.c
+.\output\timers.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\output\timers.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\output\timers.o: ..\..\Libraries\Include\M051.h
+.\output\timers.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\timers.o: ..\..\Libraries\Include\Common.h
+.\output\timers.o: ..\..\Libraries\Include\Retarget.h
+.\output\timers.o: ..\..\Libraries\MiP_Libraries\Timers\..\UART\UART.h
+.\output\timers.o: ..\..\Libraries\MiP_Libraries\Timers\..\System_Clock\System_Clock.h
+.\output\timers.o: ..\..\Libraries\MiP_Libraries\Timers\Timers.h

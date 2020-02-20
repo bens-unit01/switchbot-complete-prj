@@ -1,0 +1,35 @@
+Dependencies for Project 'Switchbot', Target 'Switchbot': (DO NOT MODIFY !)
+F (.\Source\switchbotMain.c)(0x54F5E947)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\switchbotmain.o --omf_browse .\output\switchbotmain.crf --depend .\output\switchbotmain.d)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdlib.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\math.h)(0x51C86E14)
+I (..\..\Libraries\Include\M051.h)(0x552D687F)
+I (..\..\Libraries\Include\Register_Bit.h)(0x552D687F)
+I (..\..\Libraries\Include\Common.h)(0x552D687F)
+I (..\..\Libraries\Include\Retarget.h)(0x552D687F)
+I (..\..\Libraries\Include\Macro_SystemClock.h)(0x552D687F)
+I (..\..\Libraries\Include\Macro_Timer.h)(0x552D687F)
+F (..\..\Libraries\Common\common.c)(0x552D687F)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\common.o --omf_browse .\output\common.crf --depend .\output\common.d)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (..\..\Libraries\Include\M051.h)(0x552D687F)
+I (..\..\Libraries\Include\Register_Bit.h)(0x552D687F)
+F (..\..\Libraries\Common\retarget.c)(0x552D687F)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\retarget.o --omf_browse .\output\retarget.crf --depend .\output\retarget.d)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C86E14)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x51C86E14)
+I (..\..\Libraries\Include\M051.h)(0x552D687F)
+I (..\..\Libraries\Include\Register_Bit.h)(0x552D687F)
+F (..\..\Libraries\Common\startup_M051.s)(0x552D687F)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include--list .\listing\startup_m051.lst --xref -o .\output\startup_m051.o --depend .\output\startup_m051.d)
+F (..\..\Libraries\MiP_Libraries\System_Clock\System_Clock.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\system_clock.o --omf_browse .\output\system_clock.crf --depend .\output\system_clock.d)
+F (..\..\Libraries\MiP_Libraries\UART\UART.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\uart.o --omf_browse .\output\uart.crf --depend .\output\uart.d)
+F (..\..\Libraries\MiP_Libraries\SPI\SPI.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\spi.o --omf_browse .\output\spi.crf --depend .\output\spi.d)
+F (..\..\Libraries\MiP_Libraries\IMU\IMU.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\imu.o --omf_browse .\output\imu.crf --depend .\output\imu.d)
+F (..\..\Libraries\MiP_Libraries\Timers\Timers.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\timers.o --omf_browse .\output\timers.crf --depend .\output\timers.d)
+F (..\..\Libraries\MiP_Libraries\GPIO\GPIO.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\gpio.o --omf_browse .\output\gpio.crf --depend .\output\gpio.d)
+F (..\..\Libraries\MiP_Libraries\PWM\PWM.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\pwm.o --omf_browse .\output\pwm.crf --depend .\output\pwm.d)
+F (..\..\Libraries\MiP_Libraries\Encoders\Encoders.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\encoders.o --omf_browse .\output\encoders.crf --depend .\output\encoders.d)
+F (..\..\Libraries\MiP_Libraries\Motor_drive\Motor_Drive.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\motor_drive.o --omf_browse .\output\motor_drive.crf --depend .\output\motor_drive.d)
+F (..\..\Libraries\MiP_Libraries\Estimator\Estimator.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\estimator.o --omf_browse .\output\estimator.crf --depend .\output\estimator.d)
+F (..\..\Libraries\MiP_Libraries\ADC\ADC.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\adc.o --omf_browse .\output\adc.crf --depend .\output\adc.d)
+F (..\..\Libraries\MiP_Libraries\Robot_Values\Robot_Values.h)(0x00000000)()
+F (..\..\Libraries\MiP_Libraries\Interrupt_Priority\Interrupt_Priority.c)(0x00000000)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork -I..\..\Libraries\MiP_Libraries -I..\..\Libraries\Include -I..\..\Libraries\MiP_Libraries-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-o .\output\interrupt_priority.o --omf_browse .\output\interrupt_priority.crf --depend .\output\interrupt_priority.d)

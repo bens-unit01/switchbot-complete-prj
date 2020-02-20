@@ -1,0 +1,134 @@
+
+// differents build utilisé sur odroid-c1+
+
+
+Kernel version
+3.10.33
+tobetter@hkxeon #1
+Thu Dec 11 17:05:42 KST 2014
+
+Build number 
+odroid-eng 4.4.2 KOT49H 20141211 test-keys
+
+//-------------------------------------
+
+Kernel version
+3.10.33
+junkins@build #1
+Fri Jul 17 17:03:50 KST 2015
+
+Build number
+odroidc-eng 4.4.2 KOT49H odroidc-eng-s805_4.4.2_master-372 tests-keys
+
+
+
+//------------------------------
+problem Socket-server --> wrong time ??
+
+
+08-18 17:45:40.340: W/System.err(577):  |   |   +- java.net.SocketTimeoutException: Timeout on Read
+08-18 17:45:40.340: W/System.err(577): 	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onReadTimeout(AbstractWebSocketConnection.java:526)
+08-18 17:45:40.340: W/System.err(577): 	at org.eclipse.jetty.io.AbstractConnection.onFillInterestedFailed(AbstractConnection.java:173)
+08-18 17:45:40.340: W/System.err(577): 	at org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillInterestedFailed(AbstractWebSocketConnection.java:496)
+08-18 17:45:40.340: W/System.err(577): 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback$1.run(AbstractConnection.java:582)
+08-18 17:45:40.340: W/System.err(577): 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+08-18 17:45:40.340: W/System.err(577): 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+08-18 17:45:40.340: W/System.err(577): 	at java.lang.Thread.run(Thread.java:841)
+
+
+
+
+08-18 17:56:25.100: W/System.err(5744):  |   |   |   +- org.eclipse.jetty.server.ServerConnector.newEndPoint(ServerConnector.java:426)
+08-18 17:56:25.100: W/System.err(5744):  |   |   |   +- java.nio.SelectorImpl@41a6cb68 keys=1
+08-18 17:56:25.100: W/System.err(5744):  |   |   |   +- SelectChannelEndPoint@419c36b0{/10.10.250.21:46771<->8080,Open,in,out,R,-,30000,HttpConnection}{io=1,kio=1,kro=0} iOps=1 rOps=0
+
+
+
+
+
+
+08-18 14:50:54.360: I/dalvikvm(1925): Could not find method org.slf4j.LoggerFactory.getLogger, referenced from method org.eclipse.jetty.util.log.Slf4jLog.<init>
+08-18 14:50:54.360: W/dalvikvm(1925): VFY: unable to resolve static method 27395: Lorg/slf4j/LoggerFactory;.getLogger (Ljava/lang/String;)Lorg/slf4j/Logger;
+08-18 14:50:54.360: D/dalvikvm(1925): VFY: replacing opcode 0x71 at 0x0003
+08-18 14:50:54.360: I/dalvikvm(1925): Could not find method org.slf4j.Logger.debug, referenced from method org.eclipse.jetty.util.log.Slf4jLog.debug
+08-18 14:50:54.360: W/dalvikvm(1925): VFY: unable to resolve interface method 27388: Lorg/slf4j/Logger;.debug (Ljava/lang/String;[Ljava/lang/Object;)V
+08-18 14:50:54.360: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0013
+08-18 14:50:54.360: I/dalvikvm(1925): Could not find method org.slf4j.Logger.debug, referenced from method org.eclipse.jetty.util.log.Slf4jLog.debug
+08-18 14:50:54.360: W/dalvikvm(1925): VFY: unable to resolve interface method 27387: Lorg/slf4j/Logger;.debug (Ljava/lang/String;Ljava/lang/Throwable;)V
+08-18 14:50:54.360: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.360: I/dalvikvm(1925): Could not find method org.slf4j.Logger.debug, referenced from method org.eclipse.jetty.util.log.Slf4jLog.debug
+08-18 14:50:54.360: W/dalvikvm(1925): VFY: unable to resolve interface method 27388: Lorg/slf4j/Logger;.debug (Ljava/lang/String;[Ljava/lang/Object;)V
+08-18 14:50:54.360: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.360: I/dalvikvm(1925): Could not find method org.slf4j.Logger.getName, referenced from method org.eclipse.jetty.util.log.Slf4jLog.getName
+08-18 14:50:54.360: W/dalvikvm(1925): VFY: unable to resolve interface method 27389: Lorg/slf4j/Logger;.getName ()Ljava/lang/String;
+08-18 14:50:54.360: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.370: I/dalvikvm(1925): Could not find method org.slf4j.Logger.info, referenced from method org.eclipse.jetty.util.log.Slf4jLog.info
+08-18 14:50:54.370: W/dalvikvm(1925): VFY: unable to resolve interface method 27390: Lorg/slf4j/Logger;.info (Ljava/lang/String;Ljava/lang/Throwable;)V
+08-18 14:50:54.370: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.370: I/dalvikvm(1925): Could not find method org.slf4j.Logger.info, referenced from method org.eclipse.jetty.util.log.Slf4jLog.info
+08-18 14:50:54.370: W/dalvikvm(1925): VFY: unable to resolve interface method 27391: Lorg/slf4j/Logger;.info (Ljava/lang/String;[Ljava/lang/Object;)V
+08-18 14:50:54.370: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.370: I/dalvikvm(1925): Could not find method org.slf4j.Logger.isDebugEnabled, referenced from method org.eclipse.jetty.util.log.Slf4jLog.isDebugEnabled
+08-18 14:50:54.370: W/dalvikvm(1925): VFY: unable to resolve interface method 27392: Lorg/slf4j/Logger;.isDebugEnabled ()Z
+08-18 14:50:54.370: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.370: I/dalvikvm(1925): Could not find method org.slf4j.Logger.warn, referenced from method org.eclipse.jetty.util.log.Slf4jLog.warn
+08-18 14:50:54.370: W/dalvikvm(1925): VFY: unable to resolve interface method 27393: Lorg/slf4j/Logger;.warn (Ljava/lang/String;Ljava/lang/Throwable;)V
+08-18 14:50:54.370: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.370: I/dalvikvm(1925): Could not find method org.slf4j.Logger.warn, referenced from method org.eclipse.jetty.util.log.Slf4jLog.warn
+08-18 14:50:54.370: W/dalvikvm(1925): VFY: unable to resolve interface method 27394: Lorg/slf4j/Logger;.warn (Ljava/lang/String;[Ljava/lang/Object;)V
+08-18 14:50:54.370: D/dalvikvm(1925): VFY: replacing opcode 0x72 at 0x0002
+08-18 14:50:54.370: I/dalvikvm(1925): Failed resolving Lorg/eclipse/jetty/util/log/JettyAwareLogger; interface 3883 'Lorg/slf4j/Logger;'
+08-18 14:50:54.370: W/dalvikvm(1925): Link of class 'Lorg/eclipse/jetty/util/log/JettyAwareLogger;' failed
+08-18 14:50:54.370: D/dalvikvm(1925): DexOpt: unable to opt direct call 0x4e59 at 0x0f in Lorg/eclipse/jetty/util/log/Slf4jLog;.<init>
+08-18 14:50:54.370: W/System.err(1925): Defaulting Uptime to NOIMPL due to (java.lang.UnsupportedOperationException) Implementation not available
+08-18 14:50:54.370: W/System.err(1925): 2015-08-18 14:50:54.378:INFO::Thread-169: Logging initialized @-1ms
+08-18 14:50:54.370: I/TextToSpeech(1925): Sucessfully bound to com.google.android.tts
+08-18 14:50:54.380: D/SwitchBot(1925): onResume ...
+08-18 14:50:54.380: D/PushServer(1925): Lightstreamer onResume() ...
+08-18 14:50:54.390: D/LsListener(1925): run() message: Disconnected
+08-18 14:50:54.390: D/SwitchBot(1925): PushServerListener onError - MainActivity ... error: 8
+08-18 14:50:54.390: D/PushServer(1925): MegamipLSClientListener onNotify()  - message: Disconnected
+08-18 14:50:54.410: D/dalvikvm(1925): GC_CONCURRENT freed 340K, 12% free 3057K/3456K, paused 1ms+3ms, total 19ms
+08-18 14:50:54.410: D/dalvikvm(1925): WAIT_FOR_CONCURRENT_GC blocked 4ms
+08-18 14:50:54.410: D/dalvikvm(1925): WAIT_FOR_CONCURRENT_GC blocked 5ms
+08-18 14:50:54.410: W/System.err(1925): 2015-08-18 14:50:54.421:INFO:oejs.Server:Thread-169: jetty-9.2.z-SNAPSHOT
+08-18 14:50:54.440: W/dalvikvm(1925): dvmFindClassByName rejecting 'org/eclipse/jetty/http/mime_en_US'
+08-18 14:50:54.440: W/dalvikvm(1925): dvmFindClassByName rejecting 'org/eclipse/jetty/http/mime_en'
+08-18 14:50:54.440: W/dalvikvm(1925): dvmFindClassByName rejecting 'org/eclipse/jetty/http/mime'
+08-18 14:50:54.460: D/dalvikvm(1925): GC_CONCURRENT freed 191K, 7% free 3371K/3624K, paused 3ms+4ms, total 25ms
+08-18 14:50:54.460: D/dalvikvm(1925): WAIT_FOR_CONCURRENT_GC blocked 11ms
+08-18 14:50:54.480: D/OpenGLRenderer(1925): Enabling debug mode 0
+08-18 14:50:54.650: W/dalvikvm(1925): dvmFindClassByName rejecting 'org/eclipse/jetty/http/encoding_en_US'
+08-18 14:50:54.650: W/dalvikvm(1925): dvmFindClassByName rejecting 'org/eclipse/jetty/http/encoding_en'
+08-18 14:50:54.650: W/dalvikvm(1925): dvmFindClassByName rejecting 'org/eclipse/jetty/http/encoding'
+08-18 14:50:54.670: W/System.err(1925): 2015-08-18 14:50:54.675:INFO:oejsh.ContextHandler:Thread-169: Started o.e.j.s.ServletContextHandler@41c1e0b8{/,null,AVAILABLE}
+08-18 14:50:54.680: W/System.err(1925): 2015-08-18 14:50:54.686:INFO:oejs.ServerConnector:Thread-169: Started ServerConnector@41bf7640{HTTP/1.1}{0.0.0.0:8080}
+08-18 14:50:54.680: W/System.err(1925): 2015-08-18 14:50:54.687:INFO:oejs.Server:Thread-169: Started @-1ms
+08-18 14:50:54.680: W/System.err(1925): org.eclipse.jetty.server.Server@41b8e9b8 - STARTED
+08-18 14:50:54.720: W/System.err(1925):  += qtp1103048968{STARTED,8<=8<=200,i=5,q=0} - STARTED
+08-18 14:50:54.720: W/System.err(1925):  |   +- 176 qtp1103048968-176-selector-ServerConnectorManager@41c17df8/0 RUNNABLE @ libcore.io.Posix.poll(Native Method)
+08-18 14:50:54.720: W/System.err(1925):  |   +- 177 qtp1103048968-177-selector-ServerConnectorManager@41c17df8/1 RUNNABLE @ libcore.io.Posix.poll(Native Method)
+08-18 14:50:54.720: W/System.err(1925):  |   +- 178 qtp1103048968-178-acceptor-0@41c78c90-ServerConnector@41bf7640{HTTP/1.1}{0.0.0.0:8080} RUNNABLE @ libcore.io.Posix.accept(Native Method)
+08-18 14:50:54.720: W/System.err(1925):  |   +- 179 qtp1103048968-179 TIMED_WAITING @ java.lang.Object.wait(Native Method) IDLE
+08-18 14:50:54.720: W/System.err(1925):  |   +- 180 qtp1103048968-180 TIMED_WAITING @ java.lang.Object.wait(Native Method) IDLE
+08-18 14:50:54.720: W/System.err(1925):  |   +- 181 qtp1103048968-181 TIMED_WAITING @ java.lang.Object.wait(Native Method) IDLE
+08-18 14:50:54.720: W/System.err(1925):  |   +- 182 qtp1103048968-182 TIMED_WAITING @ java.lang.Object.wait(Native Method) IDLE
+08-18 14:50:54.720: W/System.err(1925):  |   +- 183 qtp1103048968-183 TIMED_WAITING @ java.lang.Object.wait(Native Method) IDLE
+08-18 14:50:54.720: W/System.err(1925):  += ServerConnector@41bf7640{HTTP/1.1}{0.0.0.0:8080} - STARTED
+08-18 14:50:54.720: W/System.err(1925):  |   +~ org.eclipse.jetty.server.Server@41b8e9b8 - STARTED
+08-18 14:50:54.720: W/System.err(1925):  |   +~ qtp1103048968{STARTED,8<=8<=200,i=5,q=0} - STARTED
+08-18 14:50:54.720: W/System.err(1925):  |   += org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@41c10288 - STARTED
+08-18 14:50:54.720: W/System.err(1925):  |   +- org.eclipse.jetty.io.ArrayByteBufferPool@41c11498
+08-18 14:50:54.720: W/System.err(1925):  |   += HttpConnectionFactory@41bf8e88{HTTP/1.1} - STARTED
+08-18 14:50:54.720: W/System.err(1925):  |   |   +- HttpConfiguration@41bfb578{32768/8192,8192/8192,https://:0,[]}
+08-18 14:50:54.720: W/System.err(1925):  |   += org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@41c17df8 - STARTED
+
+
+
+
+
+
+12-31 19:11:10.532: D/SHE::onError(4940): com.android.org.bouncycastle.jce.exception.ExtCertPathValidatorException: 
+Could not validate certificate: Certificate not valid until Tue May 03 03:00:00 EDT 2011 
+(compared to Wed Dec 31 19:11:10 EST 1969)
+

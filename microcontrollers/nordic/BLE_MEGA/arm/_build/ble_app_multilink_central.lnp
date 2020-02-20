@@ -1,0 +1,24 @@
+--cpu Cortex-M0
+".\_build\arm_startup_nrf51.o"
+".\_build\system_nrf51.o"
+".\_build\main.o"
+".\_build\ble_uart_c.o"
+".\_build\blinkm.o"
+".\_build\debug.o"
+".\_build\retarget.o"
+".\_build\switchbotnordic.o"
+".\_build\time_utils.o"
+".\_build\twi_master.o"
+".\_build\uart_comm2.o"
+".\_build\ble_hrs_c.o"
+".\_build\device_manager_central.o"
+".\_build\pstorage.o"
+".\_build\ble_db_discovery.o"
+".\_build\softdevice_handler.o"
+".\_build\ble_debug_assert_handler.o"
+".\_build\app_gpiote.o"
+".\_build\nrf_delay.o"
+--strict --scatter ".\_build\ble_app_multilink_central.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\_build\ble_app_multilink_central.map" -o .\_build\ble_app_multilink_central.axf

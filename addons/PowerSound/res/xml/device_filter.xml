@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+     <!-- 0x45E / 0x0779 Microsoft webcam HD-3000   -->
+    <usb-device vendor-id="1118" product-id="1913" />
+    
+</resources>

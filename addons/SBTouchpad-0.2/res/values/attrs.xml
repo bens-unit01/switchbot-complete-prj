@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<attr name="buttonType">
+		<enum name="primary" value="1" />
+		<enum name="primary_highlighted" value="2" />
+		<enum name="primary_warning" value="3" />
+		<enum name="secondary_black" value="4" />
+		<enum name="secondary_white" value="5" />
+	</attr>
+	 <declare-styleable name="CircleButton">
+        <attr name="cb_color" format="color" />
+        <attr name="cb_pressed_ring_width" format="dimension" />
+    </declare-styleable>
+	<declare-styleable name="Button">
+		<attr name="buttonType" />
+	</declare-styleable>
+	<declare-styleable name="CheckBox">
+		<attr name="is_dash" format="boolean" />
+	</declare-styleable>
+	<declare-styleable name="SwitchControl">
+		<attr name="switch_enabled" format="boolean" />
+		<attr name="switch_checked" format="boolean" />
+		<attr name="switch_left_label" format="string" default="Off"/>
+		<attr name="switch_right_label" format="string" default="On"/>
+	</declare-styleable>
+	<declare-styleable name="LabelEditText">
+		<attr name="label_text_text" format="string" />
+		<attr name="label_text_label" format="string" />
+		<attr name="label_text_enabled" format="boolean" />
+	</declare-styleable>
+	
+	<attr name="togglePosition">
+		<enum name="left" value="1" />
+		<enum name="middle" value="2" />
+		<enum name="right" value="3" />
+	</attr>
+	<declare-styleable name="ToggleButton">
+		<attr name="togglePosition" />
+	</declare-styleable>
+	
+	<attr name="imageType">
+		<enum name="custom" value="0" />
+		<enum name="close" value="1" />
+		<enum name="list" value="2" />
+		<enum name="remove" value="3" />
+		<enum name="levelup" value="4" />
+		<enum name="sec" value="5" />
+		<enum name="play" value="6" />
+	</attr>
+	<declare-styleable name="ImageButton">
+		<attr name="imageType" />
+		<attr name="enabled" format="boolean" />
+	</declare-styleable>
+	<declare-styleable name="Sliderbar">
+		<attr name="min_value" format="integer"/>
+		<attr name="max_value" format="integer"/>
+		<attr name="divide_in" format="integer" />
+		<attr name="current_value" format="integer" />
+	</declare-styleable>
+	
+	    <declare-styleable name="ProgressBar">
+        <attr name="android:progressDrawable" />
+        <attr name="android:minWidth" />
+        <attr name="android:maxWidth" />
+        <attr name="android:minHeight" />
+        <attr name="android:maxHeight" />
+        <attr name="android:max" />
+        <attr name="android:progress" />
+        <attr name="android:secondaryProgress" />
+    </declare-styleable>
+
+    <declare-styleable name="SeekBar">
+        <attr name="android:thumb" />
+        <attr name="android:thumbOffset" />
+    </declare-styleable>
+    <declare-styleable name="Theme">
+        <attr name="android:disabledAlpha" />
+    </declare-styleable>
+</resources>

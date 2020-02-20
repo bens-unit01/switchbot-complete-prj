@@ -1,0 +1,31 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+\\psf\Dropbox\switchbot\switchbotNuvoton\Code_with_Libraries\UART0_read 2\UART0_read.uvproj
+Project File Date:  08/06/2014
+
+<h2>Output:</h2>
+Rebuild target 'UART0_read_test'
+compiling UART0_read_test.c...
+Source\UART0_read_test.c(21): warning:  #177-D: variable "Timer_Count" was declared but never referenced
+  static uint32_t Timer_Count = 0;
+Source\UART0_read_test.c: 1 warning, 0 errors
+compiling common.c...
+compiling retarget.c...
+assembling startup_M051.s...
+compiling System_Clock.c...
+compiling UART.c...
+..\..\Libraries\MiP_Libraries\UART\UART.c(58): warning:  #9-D: nested comment is not allowed
+        printf("\n");//*/
+..\..\Libraries\MiP_Libraries\UART\UART.c: 1 warning, 0 errors
+linking...
+Program Size: Code=4612 RO-data=352 RW-data=52 ZI-data=1148  
+After Build - User command #1: fromelf --bin ".\output\Timer_Demo.axf" --output ".\output\Timer_Demo.bin"
+After Build - User command #2: fromelf --text -c ".\output\Timer_Demo.axf" --output ".\output\Timer_Demo.txt"
+".\Output\Timer_Demo.axf" - 0 Error(s), 2 Warning(s).
+Load "\\\\psf\\Dropbox\\switchbot\\switchbotNuvoton\\Code_with_Libraries\\UART0_read 2\\Output\\Timer_Demo.axf" 
+</pre>
+</body>
+</html>

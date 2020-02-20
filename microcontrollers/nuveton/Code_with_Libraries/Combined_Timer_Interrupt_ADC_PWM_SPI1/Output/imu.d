@@ -1,0 +1,11 @@
+.\output\imu.o: ..\..\Libraries\MiP_Libraries\IMU\IMU.c
+.\output\imu.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\output\imu.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\output\imu.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\output\imu.o: ..\..\Libraries\Include\M051.h
+.\output\imu.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\imu.o: ..\..\Libraries\Include\Common.h
+.\output\imu.o: ..\..\Libraries\Include\Retarget.h
+.\output\imu.o: ..\..\Libraries\MiP_Libraries\IMU\IMU.h
+.\output\imu.o: ..\..\Libraries\MiP_Libraries\IMU\..\SPI\SPI.h
+.\output\imu.o: ..\..\Libraries\MiP_Libraries\IMU\..\Robot_Values\Robot_Values.h

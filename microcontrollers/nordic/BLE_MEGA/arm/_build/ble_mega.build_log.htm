@@ -1,0 +1,306 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\ble_app_multilink_central.uvproj
+Project File Date:  10/12/2016
+
+<h2>Output:</h2>
+Build target 'nrf51822_xxaa_s120 (256K)'
+compiling main.c...
+..\debug.h(18): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wformat"
+..\debug.h(19): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wpointer-sign"
+..\main.c(540): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                        strcpy(buf, type_data.p_data);
+..\main.c(540): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *restrict"
+                        strcpy(buf, type_data.p_data);
+..\main.c(543): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                                        (strcmp(m_device_name, buf) == 0) ? true : false;
+..\main.c(549): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                                strcpy(buf2, m_beacons[i].device_name);
+..\main.c(551): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                                is_current_index = (strcmp(buf2, buf) == 0) ? true : false;
+..\main.c(551): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                                is_current_index = (strcmp(buf2, buf) == 0) ? true : false;
+..\main.c(1269): warning:  #223-D: function "BlinkM_handleCmd" declared implicitly
+                      BlinkM_handleCmd((BLINKM_ADDR << 1), fwd_bwd);
+..\main.c(1497): warning:  #223-D: function "calculate_speed2" declared implicitly
+                        bool flag = calculate_speed2(IR, MaxRange, &fwd_bwd, &lft_rgt, debug_values);
+..\main.c(1776): warning:  #223-D: function "twi_master_init" declared implicitly
+        twi_master_init();
+..\main.c(1783): warning:  #223-D: function "BlinkM_handleCmd" declared implicitly
+      BlinkM_handleCmd((BLINKM_ADDR << 1), 1);
+..\main.c(108): warning:  #550-D: variable "stamp1" was set but never used
+  static int stamp1, stamp2;
+..\main.c(108): warning:  #177-D: variable "stamp2" was declared but never referenced
+  static int stamp1, stamp2;
+..\main.c(159): warning:  #177-D: variable "m_closeset_device" was declared but never referenced
+  static char * m_closeset_device = "ww_beacon_03";
+..\main.c(161): warning:  #177-D: variable "m_closeset_index" was declared but never referenced
+  static int m_closeset_index = 0;
+..\main.c(162): warning:  #550-D: variable "desiredAngle" was set but never used
+  static int desiredAngle = 180;
+..\main.c: 17 warnings, 0 errors
+compiling SwitchbotNordic.c...
+..\debug.h(18): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wformat"
+..\debug.h(19): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wpointer-sign"
+..\SwitchbotNordic.c(18): warning:  #223-D: function "abs" declared implicitly
+        yawSpeed = 180 - abs(Head);
+..\SwitchbotNordic.c(58): warning:  #223-D: function "abs" declared implicitly
+        fwdSpeed = abs(easyRange - distance);
+..\SwitchbotNordic.c(113): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(fl_new, IR, 4);
+..\SwitchbotNordic.c(163): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(fl_new, IR, 8);
+..\SwitchbotNordic.c: 6 warnings, 0 errors
+linking...
+Program Size: Code=24912 RO-data=456 RW-data=404 ZI-data=4612  
+FromELF: creating hex file...
+".\_build\ble_mega.axf" - 0 Error(s), 23 Warning(s).
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+ordic.c(163): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(fl_new, IR, 8);
+..\SwitchbotNordic.c: 6 warnings, 0 errors
+compiling time_utils.c...
+compiling twi_master.c...
+compiling uart_comm2.c...
+compiling ble_hrs_c.c...
+compiling device_manager_central.c...
+compiling pstorage.c...
+compiling ble_db_discovery.c...
+compiling softdevice_handler.c...
+compiling ble_debug_assert_handler.c...
+compiling app_gpiote.c...
+compiling nrf_delay.c...
+compiling app_trace.c...
+linking...
+Program Size: Code=24912 RO-data=456 RW-data=404 ZI-data=4612  
+FromELF: creating hex file...
+".\_build\ble_mega.axf" - 0 Error(s), 32 Warning(s).
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+iteral slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+A
+VTarget = 3.319V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.319V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.319V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

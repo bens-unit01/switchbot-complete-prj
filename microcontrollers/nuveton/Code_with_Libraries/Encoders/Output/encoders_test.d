@@ -1,0 +1,11 @@
+.\output\encoders_test.o: Source\Encoders_test.c
+.\output\encoders_test.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\output\encoders_test.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\output\encoders_test.o: ..\..\Libraries\Include\M051.h
+.\output\encoders_test.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\encoders_test.o: ..\..\Libraries\Include\Common.h
+.\output\encoders_test.o: ..\..\Libraries\Include\Retarget.h
+.\output\encoders_test.o: ..\..\Libraries\MiP_Libraries\System_Clock\System_Clock.h
+.\output\encoders_test.o: ..\..\Libraries\MiP_Libraries\UART\UART.h
+.\output\encoders_test.o: ..\..\Libraries\MiP_Libraries\Encoders\Encoders.h
+.\output\encoders_test.o: ..\..\Libraries\MiP_Libraries\GPIO\GPIO.h

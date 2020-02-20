@@ -1,0 +1,49 @@
+
+
+
+
+> On May 13, 2016, at 1:51 PM, Raouf <raouf@wowwee.com> wrote:
+> I finished the integration of the UART and WIFI. I have access 
+> to them from the android userspace.  From the software side 
+> we are ready to connect everything and test. 
+
+That is excellent news! Were there any surprises? Is there anything that you wanted done differently?
+
+> I exported  all the SOM shematics to pdf from your Altium files but I don't
+> have any indication regarding  to which jumpers SOM_UART1_RX, SOM_UART1_TX, 
+> SOM_UART2_RX, SOM_UART2_TX are connected ? ( J12  probably !!).
+
+All of the connections between the SOM and STM boards are done through the one connector at the bottom centre of the board. 
+It’s designed to “stack” with a 4x8 2mm pitch male-to-male header. I use four 1x8 headers; it’s MUCH cheaper and electrically no different.
+
+I believe that there is some kernel work required on the SOM; they use the I/O in a very specific arrangement and have mentioned a couple of
+times now that software changes on the SOM are required to take advantage of all of the I/O we want to use.
+
+I suspect that there will be some device tree changes and some GPIO changes, but little else. This is one aspect of the SOM design that we 
+	have not yet been able to get from them.
+
+As far as the resistor jumpers on the motor board. I will gather this information for you, but they will be of little use until we get updated software for the SOM.
+
+> We'll need some indications from you regarding the following : 
+>     - On the motors board, how the pins are enumerated in J20. 
+>     - Same for J12 on the SOM board. 
+
+The pins on J20 and J12 are arranged in four rows.  On the bottom of the board you will see one pin that is “square” and the rest are round. 
+That square pin is pin 1, and then the ordering is that the first “column" of 4 pins is 1,2,3,4. Pin 5 is immediately beside pin 1, so the 
+next column is 5,6,7,8. This pattern continues until you reach the opposite end of the row of 8 pins, which gives 29,30,31,32.
+
+
+I would supply 5V to the board stack from the USB port on the MOTOR board; the charge circuitry on the SOM board is not correct and will not 
+work correctly even for basic powering of the board stack.
+
+> Next week we'll start wiring the 2 boards and install them 
+> into the robot, it's gonna be mush easier this time  since there's no hdmi cables ;-).
+
+This is excellent news.
+
+> Is it possible to share your login for the infochips support website ? I didn't 
+> get any response from their support departement untill now. 
+
+No problem. I was hoping to hear from them on how to recreate the android partition map but have not heard anything back either.
+
+andrew@mixdown.ca and EItigit1

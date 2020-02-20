@@ -1,0 +1,16 @@
+.\_build\retarget.o: ..\retarget.c
+.\_build\retarget.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\_build\retarget.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\retarget.o: ..\uart_comm2.h
+.\_build\retarget.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\retarget.o: C:\Development\BLE\NORDIC_DEV_6\nrf51822_sdk\Include\nordic_common.h
+.\_build\retarget.o: C:\Development\BLE\NORDIC_DEV_6\nrf51822_sdk\Include\nrf51.h
+.\_build\retarget.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+.\_build\retarget.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\_build\retarget.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\_build\retarget.o: C:\Development\BLE\NORDIC_DEV_6\nrf51822_sdk\Include\system_nrf51.h
+.\_build\retarget.o: C:\Development\BLE\NORDIC_DEV_6\nrf51822_sdk\Include\nrf51_bitfields.h
+.\_build\retarget.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+.\_build\retarget.o: ..\SwitchbotNordic.h
+.\_build\retarget.o: ..\debug.h
+.\_build\retarget.o: C:\Development\BLE\NORDIC_DEV_6\nrf51822_sdk\Include\nrf_gpio.h

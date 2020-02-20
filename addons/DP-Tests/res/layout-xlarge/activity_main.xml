@@ -1,0 +1,459 @@
+   
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" > 
+
+   
+<LinearLayout
+    android:focusable="true" android:focusableInTouchMode="true"
+    android:layout_width="0px" android:layout_height="0px"/>
+
+   <TableLayout
+       android:id="@+id/tableLayout1"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentTop="true"
+       android:shrinkColumns="*"
+       android:stretchColumns="*" >
+
+       <TableRow
+           android:id="@+id/tableRow1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <ImageView
+               android:id="@+id/imageView1"
+               android:src="@drawable/icon_06" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow6"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView64"
+               android:text=" "
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow000"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView56"
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow001"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView60"
+               android:text="       General tests: "
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/textView61"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView62"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView63"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow002"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:text=" _________________________________ "
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/textView65"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView66"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView67"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView2"
+               android:textStyle="bold" />
+
+               <Button
+               android:id="@+id/btnStatus"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="" />
+
+           <Button
+               android:id="@+id/btnNordicMediaboxTest"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="Nordic --> Mediabox" />
+
+           <TextView
+               android:id="@+id/textView7"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+   
+
+       <TableRow
+           android:id="@+id/tableRow3"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView8"
+               android:textStyle="bold" />
+
+               <Button
+               android:id="@+id/btnRC"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="" /> 
+
+           <Button
+               android:id="@+id/btnDrivePath"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="Beacons list" />
+
+           <TextView
+               android:id="@+id/textView55"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+     <TableRow
+           
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+              
+               android:textStyle="bold" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+       </TableRow>
+       <TableRow
+           android:id="@+id/tableRow4"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:paddingTop="50dp" >
+
+           <TextView
+               android:text="        -- "
+               android:textStyle="bold" />
+
+       
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow5"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               
+               android:text="        DrivePath tests: "
+               android:textStyle="bold" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:text=" _________________________________ "
+               android:textStyle="bold" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:text=" "
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:text=" "
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:textStyle="bold" />
+
+           <Button
+               android:id="@+id/btnGoto"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="Go to: " />
+
+     <EditText
+         android:id="@+id/txtBeaconId"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+          android:nextFocusUp="@id/txtBeaconId" android:nextFocusLeft="@id/txtBeaconId"
+          android:numeric="integer"/>
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:textStyle="bold" />
+
+           <Button
+               android:id="@+id/btnActivateADB"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="ADB on" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow10"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView90"
+               android:text="  "
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:text="      Activate/Deactivate motors: "
+               android:textStyle="bold" />
+
+           <Button
+               android:id="@+id/btnSetEStop"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="eStop"
+                />
+
+           <Button
+               android:id="@+id/btnClrEStop"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="CLR-eStop" />
+       </TableRow>
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:text="       Disconnect from a beacon: "
+               android:textStyle="bold" />
+
+           <Button
+               android:id="@+id/btnBleDisconnect"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="BLE disconnect"
+                />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="  " />
+       </TableRow>
+       <TableRow
+           android:id="@+id/tableRow13"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView92"
+               android:text="    ___________________ "
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:id="@+id/tableRow15"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView93"
+               android:text="  "
+               android:textStyle="bold" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView70"
+               android:text="  Default range : 100 "
+               android:textStyle="bold" />
+
+              <Button
+               android:id="@+id/btnChangeRange"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_blue_states"
+               android:text="Change range" />
+
+         
+            <EditText
+         android:id="@+id/txtRange"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+          android:nextFocusUp="@id/txtBeaconId" android:nextFocusLeft="@id/txtBeaconId"
+          android:numeric="integer"/>
+
+           <TextView
+               android:id="@+id/textView72"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView73"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/textView84"
+               android:text=" _________________________________ "
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/textView85"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView86"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView87"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <TableRow
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+
+           <TextView
+               android:id="@+id/txtSettings"
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/textView95"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView96"
+               android:gravity="center_horizontal" />
+
+           <TextView
+               android:id="@+id/textView97"
+               android:gravity="center_horizontal" />
+       </TableRow>
+
+       <LinearLayout
+           android:layout_width="554dp"
+           android:layout_height="74dp"
+           android:layout_marginLeft="20dp"
+           android:background="@color/blue2"
+           android:orientation="horizontal"
+           android:padding="10dp" >
+
+           <TextView
+               android:id="@+id/TextView04"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="        Wifi connection     " />
+
+           <Button
+               android:id="@+id/btnConnect_main"
+               android:layout_width="150dp"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="40dp"
+               android:text="Connect" />
+
+           <ImageButton
+               android:id="@+id/ledWifi_main"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="30dp"
+               android:layout_marginTop="10dp"
+               android:background="@drawable/btn_led_states"
+               android:padding="10dp" />
+       </LinearLayout>
+
+   </TableLayout>
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+--cpu Cortex-M0
+".\output\switchbotmain.o"
+".\output\common.o"
+".\output\retarget.o"
+".\output\startup_m051.o"
+".\output\system_clock.o"
+".\output\uart.o"
+".\output\spi.o"
+".\output\imu.o"
+".\output\timers.o"
+".\output\gpio.o"
+".\output\pwm.o"
+".\output\encoders.o"
+".\output\motor_drive.o"
+".\output\estimator.o"
+".\output\adc.o"
+".\output\interrupt_priority.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listing\Switchbot.map" -o .\Output\Switchbot.axf

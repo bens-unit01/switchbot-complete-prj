@@ -1,0 +1,34 @@
+
+ // probleme de l'advertising qui ne marche pas dans le custom pcb
+ solution : au niveau de la methode ble_stack_init() on doit changer
+
+ 1- cette ligne -->  SOFTDEVICE_HANDLER_INIT(NRF_CLOCK_LFCLKSRC_XTAL_20_PPM, false);
+    et mettre   -->   SOFTDEVICE_HANDLER_INIT(NRF_CLOCK_LFCLKSRC_RC_250_PPM_4000MS_CALIBRATION, false);
+
+ 2- on doit aussi utiliser la soft-device --> SOFTDEVICE = $(SDK_PATH)softdevice/s110_nrf51822_7.1.0_sof
+ tdevice.hex
+ 
+ 
+ 
+ - ajout de   #define NEVER_SLEEP
+ 
+  
+ 141   100  137  235
+ 0      0   0    206
+ 
+ 
+ 
+ 0 0 0 64 
+ 58 0 43 96 
+ 74 32 61 96
+ 
+ 
+
+
+
+
+
+
+
+
+

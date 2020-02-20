@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shadow"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:src="@drawable/switchbot" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="  Body\n  cons:      "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@color/blue2"
+            android:columnCount="3"
+            android:paddingBottom="20dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp" >
+
+            <Button
+                android:id="@+id/btnStandup"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/btn_blue_states"
+                android:onClick="onClick"
+                android:text=" Stand up " />
+
+            <Button
+                android:id="@+id/btnLeanForward"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/btn_blue_states"
+                android:onClick="onClick"
+                android:text=" Lean forward " />
+
+            <Button
+                android:id="@+id/btnLeanbackward"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/btn_blue_states"
+                android:onClick="onClick"
+                android:text=" Lean backward " />
+
+            <Button
+                android:id="@+id/btnKneel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/btn_blue_states"
+                android:onClick="onClick"
+                android:text="  Kneel " />
+
+            <Button
+                android:id="@+id/btnEStop"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/btn_blue_states"
+                android:onClick="onClick"
+                android:text=" E-Stop " />
+
+            <Button
+                android:id="@+id/btnClrEStop"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/btn_blue_states"
+                android:onClick="onClick"
+                android:text="Clr E-Stop" />
+        </GridLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Driving RC:    "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.wowwee.views.JoystickView
+                android:id="@+id/joystick"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="554dp"
+        android:layout_height="74dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/blue2"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="        Wifi connection     " />
+
+        <Button
+            android:id="@+id/btnConnect_rc"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Connect" />
+
+        <ImageButton
+            android:id="@+id/ledWifi_rc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_led_states"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

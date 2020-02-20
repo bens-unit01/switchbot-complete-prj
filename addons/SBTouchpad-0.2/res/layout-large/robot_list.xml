@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/fdLinearLayoutList"
+    android:orientation="vertical" >
+
+        <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dip">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select your Switchbot"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/cyan"
+            android:textSize="30dp"
+            android:typeface="normal" />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dip"
+        android:layout_marginBottom="40dip">
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/btn_green"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginBottom="30dip"
+            android:src="@drawable/btn_robotlist_green"
+            app:cb_color="#99CC00"
+            app:cb_pressed_ring_width="8dip" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/btn_yellow"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginBottom="30dip"
+            android:src="@drawable/btn_robotlist_yellow"
+            app:cb_color="#FFBB33"
+            app:cb_pressed_ring_width="8dip" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/btn_red"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginBottom="30dip"
+            android:src="@drawable/btn_robotlist_red"
+            app:cb_color="#FF4444"
+            app:cb_pressed_ring_width="8dip" />
+        
+      <at.markushi.ui.CircleButton
+            android:id="@+id/btn_blue"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginBottom="30dip"
+            android:src="@drawable/btn_robotlist_bleu"
+            app:cb_color="#2C75FF"
+            app:cb_pressed_ring_width="8dip" />
+
+    </LinearLayout>
+
+   
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shadow"
+    android:orientation="vertical" 
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:src="@drawable/switchbot" />
+    
+            <!--  <at.markushi.ui.CircleButton
+                android:id="@+id/btn_selected_switchbot"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="0.00"
+                android:onClick="onClick"
+                android:src="@drawable/btn_robotlist_green"
+                app:cb_color="#99CC00" />
+-->
+  <ImageButton
+         android:id="@+id/btn_selected_switchbot"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:onClick="onClick"
+         android:background="#ffffff" />
+  
+  
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_weight="0.01"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:padding="3dp" >
+
+        <Button
+            android:id="@+id/btnRC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_blue_states"
+            android:onClick="onClick"
+            android:text=" Remote control "
+            android:textColor="@color/blue2"
+            android:textSize="@dimen/dim_25dp"
+            android:padding="2dp" />
+
+        <Button
+            android:id="@+id/btnShe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_blue_states"
+            android:onClick="onClick"
+            android:text=" SHE screen"
+            android:textColor="@color/blue2"
+            android:textSize="@dimen/dim_25dp"
+             android:padding="2dp"
+           />
+
+        <Button
+            android:id="@+id/btnStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_blue_states"
+            android:onClick="onClick"
+            android:text=" SwitchBot status"
+            android:textColor="@color/blue2"
+            android:textSize="@dimen/dim_25dp"
+             android:padding="2dp" />
+
+        <Button
+            android:id="@+id/btnTelepresence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_blue_states"
+            android:onClick="onClick"
+            android:text=" Telepresence"
+            android:textColor="@color/blue2"
+            android:textSize="@dimen/dim_25dp" 
+             android:padding="2dp"/>
+        
+        <Button
+            android:id="@+id/btnDrivePath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/btn_blue_states"
+            android:onClick="onClick"
+            android:text=" DrivePath config."
+            android:textColor="@color/blue2"
+            android:textSize="@dimen/dim_25dp" 
+             android:padding="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

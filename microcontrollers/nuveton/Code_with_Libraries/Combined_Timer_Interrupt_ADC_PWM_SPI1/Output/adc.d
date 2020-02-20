@@ -1,0 +1,9 @@
+.\output\adc.o: ..\..\Libraries\MiP_Libraries\ADC\ADC.c
+.\output\adc.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\output\adc.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\output\adc.o: ..\..\Libraries\Include\M051.h
+.\output\adc.o: ..\..\Libraries\Include\Register_Bit.h
+.\output\adc.o: ..\..\Libraries\Include\Common.h
+.\output\adc.o: ..\..\Libraries\Include\retarget.h
+.\output\adc.o: ..\..\Libraries\MiP_Libraries\ADC\ADC.h
+.\output\adc.o: ..\..\Libraries\MiP_Libraries\ADC\..\UART\UART.h

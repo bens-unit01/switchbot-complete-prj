@@ -1,0 +1,134 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:att="http://schemas.android.com/apk/res/com.att.statictextbutton"        
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+  >
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_marginTop="600dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+     >   
+    <Button
+        android:id="@+id/btnGotoTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="40sp"
+        android:text="  Go to :  " />
+    <Spinner 
+       android:id="@+id/spnTargets" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+            <LinearLayout
+           android:layout_width="554dp"
+           android:layout_height="74dp"
+           android:layout_marginLeft="20dp"
+           android:background="@color/blue2"
+           android:orientation="horizontal"
+           android:padding="10dp" >
+
+           <TextView
+               android:id="@+id/TextView04"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="        Wifi connection     " />
+
+           <Button
+               android:id="@+id/btnConnect_main"
+               android:layout_width="150dp"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="40dp"
+               android:text="Connect" />
+
+           <com.wowwee.views.LedImageButton
+               android:id="@+id/ledWifi_main"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="30dp"
+               android:layout_marginTop="10dp"
+               android:background="@drawable/btn_led_states"
+               android:padding="10dp" />
+       </LinearLayout> 
+
+</LinearLayout>
+
+</RelativeLayout>
+
+ <GridView
+     android:id="@+id/grid_view"
+     android:layout_width="530dp"
+     android:layout_height="400dp"
+     android:layout_marginLeft="120dp"
+     android:layout_marginTop="200dp"
+     android:columnWidth="160dp"
+     android:gravity="center"
+     android:horizontalSpacing="10dp"
+     android:numColumns="auto_fit"
+     android:stretchMode="columnWidth"
+     android:verticalSpacing="70dp" >
+
+</GridView>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" 
+>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="25dp"
+        android:textSize="40sp"
+        android:text="Save" />
+
+    <com.att.widgets.lib.button.SegmentedTextToggleButton
+        android:id="@+id/segmented_enabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp" >
+
+        <com.att.widgets.lib.button.ImageToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Insert" />
+
+        <com.att.widgets.lib.button.ImageToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete" />
+
+        <com.att.widgets.lib.button.ImageToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swap" />
+
+        <com.att.widgets.lib.button.ImageToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set label" />
+       
+        <com.att.widgets.lib.button.ImageToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Del label" />
+    </com.att.widgets.lib.button.SegmentedTextToggleButton>
+</LinearLayout>
+
+</FrameLayout>

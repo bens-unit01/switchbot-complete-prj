@@ -1,0 +1,116 @@
+[10:54:56 AM] *** Davin Sufer added Andrew, raouf.bensalem ***
+[10:54:58 AM] Davin Sufer: Hey guys
+[10:55:07 AM] Davin Sufer: Step 1 we want to bring up the ST board.
+[10:55:17 AM] Davin Sufer: Lets use this for Q and A
+[10:55:20 AM] Andrew: ok
+[10:55:26 AM] Andrew: Good morning Raouf
+[10:55:35 AM] Davin Sufer: Which adaptor board were you speaking of?
+[10:56:22 AM] Andrew: Do you remember the quadcopter hack boards (adding XYZ GestureSense to them)? there was a tiny 
+                     adapter board which converted the 0.050” standard ARM JTAG to the 5/6 pin format that WW uses
+
+[10:56:35 AM] Davin Sufer: oh
+[10:56:38 AM] Andrew: I used that to create an easy way to get SWD hooked up
+[10:56:48 AM] Davin Sufer: ok, so we can just make our own cable and avoid that issue
+[10:56:58 AM] Davin Sufer: Is the header on the board well marked/correct?
+[10:57:07 AM] Davin Sufer: I will look in the folder you sent over
+[10:57:13 AM] Andrew: except SWDIO and SWDCK are reversed, and I spent a lot of time panicking because the STM32s were responding, but incorrectly
+[10:57:21 AM] Andrew: yes, those are marked correctly
+[10:57:58 AM] Andrew: I have updated schematics too (no physical changes, just part value changes, Altium wants it to be used one way and after
+                     20 years in Eagle my muscle memory is still programmed for the Eagle way
+		     
+[10:58:08 AM] Davin Sufer: Ok, so can you add for the sake of thoroughness, PDFs of the schematics and PCB in the folder you created?
+[10:58:19 AM] Andrew: yes I can do that
+[10:58:33 AM] Davin Sufer: thanks.  Im really hoping this means that we can start to run
+[10:59:45 AM] Andrew: yep the motor boards should be good to go. I spent a LOT of time on the specific pinning of the STM32 to make sure that ALL
+                    of the motors could use the STM32 PWM signals, that the SPI and I2S (audio) were able to be used with the actual STM32 hardware 
+                    peripherals, PWM for the emitters for GestureSense…
+		    
+		    
+[11:00:18 AM] Andrew: that is were most of the time went, there is an STM32CubeMX data file (don’t remember the name, it ends in ‘.ioc’ 
+                      which you can load up in the STM32CubeMX utility to see where everything is
+[11:00:45 AM] Andrew: I also brought USB over to the USB 2.0 FS pins on the STM32 so you could instantiate a CDC serial port for debugging the STM32 if you                       wanted
+[11:01:29 AM] Andrew: the detector pins can all be configured for external interrupt as well if your software team wanted to use that feature
+
+[11:02:49 AM] Davin Sufer: cool
+[11:05:50 AM] Andrew: the motor boards have the correct power routing for battery charging, the SOM board does not. I discovered the mistake while doing 
+	            the motor board layout.
+[11:06:56 AM] Andrew: it doesn’t matter if the system is being used as a pair — you can plug the battery into the motor board (where you want it anyway 
+	            I think, all the high current will be there) and the SOM can grab power from the motor board through that 4x8 connector on the bottom
+
+[11:07:14 AM] Andrew: the SOM board can be used on its own as long as it is powered from USB or a bench supply connected up to the battery
+[11:07:17 AM] Andrew: battery port I mean
+[11:07:27 AM] Davin Sufer: Raouf, please take notes on all the above and place it in a document in the shared dropbox folder
+
+
+[11:08:54 AM] Andrew: I have to get you documentation on the resistor population options as well. I specifically created the board pair so that the
+                      STM32 can participate as a SPI slave or audio slave since there was some talk about wanting additional audio channels and the way
+                      the SOM audio routing
+                    works made that really difficult		    		    
+[11:09:32 AM] Andrew: the boards are all shipping with the STM32 wired to be the SOM SPI slave (no audio path between STM32 and SOM). but if you change 
+	              the resistor population you can disable SPI slave and enable I2S between SOM and STM32
+[11:10:26 AM] Andrew: similarly, the emitter and detector hardware is currently all routing to the STM32; some resistor population changes and they can be routed 
+                    to the Karin BLE module instead. you can also route only SOME emitters/detectors to the BLE or STM32 if that’s what you want too
+[11:12:23 AM] Andrew: I have to run to an appt, but will be available for Skype on my phone (just ask questions here, I’ll get them)
+[11:48:02 AM] Davin Sufer: As I can’t open Altium files, we don’t have any idea about pinouts or header assignments until we get your schematics in PDF.  
+                    (Raouf has an old schematic).
+
+[11:48:21 AM] Davin Sufer: We will simpy use the cubemx files to move forward as much as we can
+[11:51:15 AM] Andrew: ok I will get them to you asap; in the meantime I’m sure there’s a free altium viewer
+[11:51:18 AM] Andrew: not ideal I agree
+[11:59:43 AM] raouf.bensalem: Good morning Andrew !!
+[12:00:16 PM] Andrew: good morning
+
+
+
+[12:55:19 PM] Andrew: I put schematics in the dropbox
+[12:55:36 PM] Andrew: I am having a hell of a time getting a USABLE assembly drawing out of Altium
+[12:56:33 PM] raouf.bensalem: Great !! thank you,
+[3:11:18 PM] Davin Sufer: what is voltage range on motor board?  to power the system and the motors?
+[3:22:32 PM] Andrew: 5V just because I'm using a USB lipoly charge controller. The buck/boost regulator for the 3.3V  has a max input range of 5.5V
+[3:23:09 PM] Andrew: I intentionally split off the motor supply in case you needed >5V for the motors.
+[3:24:16 PM] Andrew: You open the 2 jumpers on the board and supply whatever you need for the motors
+[3:26:16 PM] Andrew: There's enough room on the board for a boost regulator to give the motors 12 or 24V if needed
+[3:26:56 PM] Davin Sufer: Ok, raouf, did you get that?  You can power with 11V, just need to remove some jumpers.
+[3:31:21 PM] Davin Sufer: Remove P7 and P8
+[3:31:26 PM] Davin Sufer: thats it?
+[3:31:37 PM] Davin Sufer: won’t try to charge the power supply if USB is connected
+[3:32:50 PM] Andrew: Yes. Then connect B+ to the top two pins. The battery voltage (4.3V) is on the bottom two.
+[3:33:09 PM] Andrew: Battery is only charged via USB on that board c
+[3:33:13 PM] Andrew: -c
+[3:37:25 PM] Davin Sufer: https://www.dropbox.com/s/11x1azcmu5j5ozg/Screenshot%202016-04-04%2015.36.55.png?dl=0
+[3:47:39 PM] Davin Sufer: When you say top two pins…  Which top two?
+[3:48:51 PM] Andrew: I'm taking the kids home from school. I can make it clear when I'm at a computer.
+[3:50:59 PM] Andrew: P7 is the left two pins, P8 the right two. The top of P7 and P8 is the motor supply. The bottom of them is the 4.3V battery
+[3:58:08 PM] Davin Sufer: Ok, we are not clear where the battery is supposed to connect or where the motor supply connects to
+[3:58:18 PM | Edited 3:58:10 PM] Davin Sufer: IE where is BATT+ / BATT-
+[3:58:33 PM] Andrew: Yes. I'll annotate a pic when I'm at home in about 20m
+[3:58:36 PM] Davin Sufer: ok
+[3:58:49 PM] Andrew: It's just + though
+[3:59:07 PM] Davin Sufer: please show the pic by taking a screen of the board layout and using some arrows denoting hookup wires
+[3:59:25 PM] Andrew: Top 2 are motor + and bottom two are +4.3
+[4:00:55 PM] Andrew: I didn't break out GND as I was thinking more of current measurement. I did not realize you might need > 4.3V but
+             this does allow for it
+[4:01:22 PM] Davin Sufer: Bottom two go to a lipo battery
+[4:01:39 PM] Davin Sufer: so if we power from 11V, we still need to connect a lipo or use USB to power the logic
+[4:02:09 PM] Davin Sufer: and where is a good place to connect ground (motor/high current ground)
+[4:03:12 PM] Andrew: The JST connector - is a good solid ground point and directly connected to the motor supply ground
+[4:03:49 PM] Davin Sufer: the JST (K1) is meant as the 4.2V battery connection
+[4:04:02 PM] Davin Sufer: but I can use the ground pin of that as motor supply ground
+[4:04:09 PM] Andrew: I should have given a ground connection, didn't think of it
+[4:04:12 PM] Andrew: Correct
+[4:04:14 PM | Edited 4:04:19 PM] Davin Sufer: and the tops of P7 and P8 as + 11V
+[4:04:40 PM] Andrew: There are a bunch of grounds on the 4x8 connector too
+[4:05:11 PM] Davin Sufer: also noticed that the nordic has copper behind the antenna
+[4:05:19 PM] Andrew: I'll annotate it all
+[4:05:21 PM] Davin Sufer: maybe an issue
+[4:05:24 PM] Andrew: Hm
+[4:05:28 PM] Davin Sufer: 4 layer?
+[4:05:33 PM] Andrew: Yes
+[4:06:11 PM] Davin Sufer: ok, we can work with that, probably try it but most likely it’ll be an issue for connectivity
+[4:09:33 PM] Davin Sufer: for now we can bring the board up using the USB input?
+[4:10:05 PM] Davin Sufer: obviously no motor driving because P7 and P8 are not jumpered across so no motor power
+[4:19:12 PM] Andrew: Yep. Connect a USB cable and that's power (and eventually USB connectivity if you write it into the firmware). 
+Battery can be connected as well (and you can drive 5V motors just fine)
+[4:19:34 PM] Andrew: SWD cable attached to the SWD port at the top and you can flash your firmware
+[4:20:00 PM] Andrew: I use a little j-link but stlink or any arm-aware debugger should work
+             I’ve put a picture in Dropbox that details the power connections

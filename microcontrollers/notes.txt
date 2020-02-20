@@ -1,0 +1,7 @@
+
+
+
+Arduino lib for NeoPixels : https://github.com/adafruit/Adafruit_NeoPixel
+Product details : http://www.adafruit.com/product/1312
+
+

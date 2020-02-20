@@ -1,0 +1,172 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\ble_app_multilink_central.uvproj
+Project File Date:  04/14/2015
+
+<h2>Output:</h2>
+Rebuild target 'nrf51822_xxaa_s120 (256K)'
+assembling arm_startup_nrf51.s...
+compiling system_nrf51.c...
+compiling main.c...
+..\debug.h(18): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wformat"
+..\debug.h(19): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wpointer-sign"
+..\main.c(540): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                        strcpy(buf, type_data.p_data);
+..\main.c(540): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *restrict"
+                        strcpy(buf, type_data.p_data);
+..\main.c(543): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                                        (strcmp(m_device_name, buf) == 0) ? true : false;
+..\main.c(549): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                                strcpy(buf2, m_beacons[i].device_name);
+..\main.c(551): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                                is_current_index = (strcmp(buf2, buf) == 0) ? true : false;
+..\main.c(551): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                                is_current_index = (strcmp(buf2, buf) == 0) ? true : false;
+..\main.c(1497): warning:  #223-D: function "calculate_speed2" declared implicitly
+                        bool flag = calculate_speed2(IR, MaxRange, &fwd_bwd, &lft_rgt, debug_values);
+..\main.c(1520): warning:  #224-D: the format string requires additional arguments
+                    LOG(" #\t%d %d %d %d\t%d\t%d -- %d \n",IR[0], IR[1], IR[2], IR[3], fwd_bwd, lft_rgt);
+..\main.c(108): warning:  #550-D: variable "stamp1" was set but never used
+  static int stamp1, stamp2;
+..\main.c(108): warning:  #177-D: variable "stamp2" was declared but never referenced
+  static int stamp1, stamp2;
+..\main.c(159): warning:  #177-D: variable "m_closeset_device" was declared but never referenced
+  static char * m_closeset_device = "ww_beacon_03";
+..\main.c(161): warning:  #177-D: variable "m_closeset_index" was declared but never referenced
+  static int m_closeset_index = 0;
+..\main.c(162): warning:  #550-D: variable "desiredAngle" was set but never used
+  static int desiredAngle = 180;
+..\main.c(928): warning: C4017W: theta may be used before being set
+        int head, theta;
+..\main.c: 16 warnings, 0 errors
+compiling ble_uart_c.c...
+..\debug.h(18): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wformat"
+..\debug.h(19): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wpointer-sign"
+..\ble_uart_c.c(94): warning:  #223-D: function "printf" declared implicitly
+              LOG("[uart_C]: SD Read/Write API returns Success..\r\n");
+..\ble_uart_c.c(79): warning:  #550-D: variable "err_code" was set but never used
+          uint32_t err_code;
+..\ble_uart_c.c(191): warning:  #223-D: function "printf" declared implicitly
+          LOG("[uart_C]: Heart Rate Service discovered at peer.\r\n");
+..\ble_uart_c.c(265): warning:  #223-D: function "printf" declared implicitly
+      LOG("[uart_C]: Configuring CCCD. CCCD Handle = %d, Connection Handle = %d\r\n");
+..\ble_uart_c.c(316): warning:  #223-D: function "printf" declared implicitly
+      LOG("[uart_C]: Writing to characteristic Handle = %d, Connection Handle = %d\r\n");
+..\ble_uart_c.c: 7 warnings, 0 errors
+compiling blinkm.c...
+..\blinkm.c(95): warning:  #68-D: integer conversion resulted in a change of sign
+                    BlinkM_setTimeAdj(addr, -40);
+..\blinkm.c(107): warning:  #68-D: integer conversion resulted in a change of sign
+                    BlinkM_setTimeAdj( addr, -40);
+..\blinkm.c: 2 warnings, 0 errors
+compiling debug.c...
+..\debug.h(18): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wformat"
+..\debug.h(19): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wpointer-sign"
+..\debug.c(21): warning:  #223-D: function "memset" declared implicitly
+                memset(debug, 0, sizeof(debug[0][0]) * DEBUG_TABLE_SIZE * 2);
+..\debug.c(11): warning:  #177-D: variable "dp_cnt" was declared but never referenced
+  static uint8_t debug_cnt = 0, dp_cnt = 0;
+..\debug.c: 4 warnings, 0 errors
+compiling SwitchbotNordic.c...
+..\debug.h(18): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wformat"
+..\debug.h(19): warning:  #161-D: unrecognized #pragma
+  #pragma GCC diagnostic ignored "-Wpointer-sign"
+..\SwitchbotNordic.c(18): warning:  #223-D: function "abs" declared implicitly
+        yawSpeed = 180 - abs(Head);
+..\SwitchbotNordic.c(58): warning:  #223-D: function "abs" declared implicitly
+        fwdSpeed = abs(easyRange - distance);
+..\SwitchbotNordic.c(113): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(fl_new, IR, 4);
+..\SwitchbotNordic.c(163): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(fl_new, IR, 8);
+..\SwitchbotNordic.c(202): warning: C4017W: theta may be used before being set
+        int head, theta;
+..\SwitchbotNordic.c: 7 warnings, 0 errors
+compiling time_utils.c...
+compiling twi_master.c...
+compiling uart_comm2.c...
+compiling ble_hrs_c.c...
+compiling device_manager_central.c...
+compiling pstorage.c...
+compiling ble_db_discovery.c...
+compiling softdevice_handler.c...
+compiling ble_debug_assert_handler.c...
+compiling app_gpiote.c...
+compiling nrf_delay.c...
+compiling app_trace.c...
+linking...
+Program Size: Code=25088 RO-data=2244 RW-data=356 ZI-data=5876  
+FromELF: creating hex file...
+".\_build\ble_mega.axf" - 0 Error(s), 36 Warning(s).
+Load "C:\\Users\\user\\Documents\\Raouf\\REPO\\switchbot\\microcontrollers\\nordic\\BLE_MEGA\\arm\\_build\\ble_mega.axf" 
+Set JLink Project File to "C:\Users\user\Documents\Raouf\REPO\switchbot\microcontrollers\nordic\BLE_MEGA\arm\JLinkSettings.ini"
+* JLink Info: Device "NRF51822_XXAA" selected (257 KB flash, 16 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link Lite-Cortex-M V8 compiled Aug 20 2015 17:57:19
+Hardware: V8.00
+S/N : 518108276 
+Feature(s) : GDB 
+ 
+* JLink Info: Found SWD-DP with ID 0x0BB11477
+* JLink Info: Found Cortex-M0 r0p0, Little endian.
+* JLink Info: FPUnit: 4 code (BP) slots and 0 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+</pre>
+</body>
+</html>
+ega.axf" - 9 Error(s), 36 Warning(s).
+Target not created
+ges.
+".\_build\ble_mega.axf" - 11 Error(s), 34 Warning(s).
+Target not created
+------
+Device: nRF51822_xxAA
+VTarget = 3.313V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 4
+Software-Breakpoints: 8192
+Watchpoints:          2
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+e map.
+Finished: 2 information, 0 warning and 11 error messages.
+".\_build\ble_app_multilink_central.axf" - 11 Error(s), 36 Warning(s).
+Target not created
+
+Clean started: Project: 'ble_app_multilink_central'
+   deleting intermediate output files for target 'nrf51822_xxaa_s120 (256K)'
+   deleting intermediate output files for target 'nrf51822_xxab_s120 (128K)'

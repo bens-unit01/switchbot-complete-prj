@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shadow"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal" >
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:columnCount="3"
+            android:layout_marginRight="15dp"
+             >
+
+                <Button
+                    android:id="@+id/btnEStop"
+                    android:layout_width="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_blue_states"
+                    android:onClick="onClick"
+                    android:textSize="13dip" 
+                    android:text=" E-Stop " />
+
+                <Button
+                    android:id="@+id/btnClrEStop"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_blue_states"
+                    android:onClick="onClick"
+                    android:text="Clr E-Stop"
+                    android:textSize="13dip" 
+                    />
+
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="262dp"
+            android:layout_height="243dp" >
+
+            <com.wowwee.views.JoystickView
+                android:id="@+id/joystick"
+                android:layout_width="match_parent"
+                android:layout_height="262dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/blue2"
+            android:padding="15dp" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btnConnect"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dip" 
+                    android:text="Connect" />
+                
+            <ImageButton
+                android:id="@+id/btnLedBluetooth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_led_states"
+                android:padding="10dp" 
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="50dp"/>
+                
+            </TableRow>
+
+            <TableRow>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

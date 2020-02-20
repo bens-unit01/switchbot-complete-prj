@@ -1,0 +1,9 @@
+echo "Running ctags -R *.c *.h
+../../../../../../../../../Development/ble/NORDIC_DEV_6/nrf51822_sdk/Include/*
+../../../../../../../../../Development/ble/NORDIC_DEV_6/nrf51822_sdk/Source/*"  
+echo "Please wait ..." 
+rm tags 
+ctags -R *.c *.h  ../../../../../../../../../Development/ble/NORDIC_DEV_6/nrf51822_sdk/Include/*  ../../../../../../../../../Development/ble/NORDIC_DEV_6/nrf51822_sdk/Source/* 
+
+echo "Done." 
+

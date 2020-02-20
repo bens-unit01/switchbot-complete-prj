@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<head>
+<title></title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" type="text/css" href="https://labs.godogfetch.com/css/gdf-site.css">
+	<link rel="stylesheet" href="https://labs.godogfetch.com/css/godog.css" type="text/css">
+
+	<script src="https://labs.godogfetch.com/js/jquery/jquery.min.js"></script>
+	<script src="https://labs.godogfetch.com/js/jquery/jquery.widget.min.js"></script>
+	<script src="https://labs.godogfetch.com/js/gdf-site-progress.js"></script>
+	<script src="https://labs.godogfetch.com/js/gdf-site.min.js"></script>
+	<script src="https://labs.godogfetch.com/js/raphael.2.1.0.min.js"></script>
+	<script src="https://labs.godogfetch.com/js/justgage.1.0.1.min.js"></script>
+</head>
+<body class="metro">
+	<script type="text/javascript">
+		var userData = {};
+		var moreResultsURL = "";
+		var shareTitle = "goDog Fetch!";
+		var shareDesc  = "Find it faster with goDog.";
+		var shareImage = "https://labs.godogfetch.com/img/logo_160x160.jpg";
+		var shareURL   = "https://www.goDogFetch.com";
+		
+		$(document).ready(function(){
+			// quickly display last known user
+			var fname = (localStorage.fname || '');
+			if (fname !== '') {
+				var item =
+					"<div class=\"notice marker-on-top bg-dark padding20 text-center\">" +
+						"<h1 class=\"fg-white\" style=\"font-size: 70px; line-height: 80px;\">Hi " + fname + "</h1>" +
+					"</div>";
+					
+				$('#listview').empty();
+				$('#listview').append(item).trigger('create');
+			}
+			
+			webConnector.onDocumentReady();
+		});		
+		
+		function showWelcome(fname) {
+			userData = JSON.parse(webConnector.getUserData());
+			
+			localStorage.fname = fname;
+			
+			if (musicTimer) clearInterval(musicTimer);
+			
+			userData.measurement = (userData.measurement ? userData.measurement : 'imperial');
+			userData.showWeather = (userData.showWeather ? userData.showWeather : true);
+			userData.showCal     = (userData.showCal ? userData.showCal : true);
+			userData.calendar    = (userData.calendar ? userData.calendar : []);
+			userData.showTODO    = (userData.showTODO ? userData.showTODO : true);
+			userData.todo        = (userData.todo ? userData.todo : []);
+
+			$('#upgrade').hide();
+			$('#upgradeComplete').hide();
+			$('#socialShare').hide();
+			$('#listview').empty();
+			
+			var item =
+				"<div class=\"notice marker-on-top bg-dark padding20 text-center\">" +
+					"<h1 class=\"fg-white\" style=\"font-size: 40px; line-height: 30px; margin-bottom: 15px\">Hi " + fname + "</h1>" +
+				"</div>";
+				
+			$('#listview').append(item).trigger('create');
+			
+			showWeather(userData.weather);
+//			showCalendar();
+//			showReminders();
+//			showNews();
+//			showVoiceCommands();
+		}
+		
+		function updateWeather() {
+			var weather = JSON.parse(webConnector.getWeatherData());
+			showWeather(weather);
+		}
+		
+		function upgradeApp() {
+			$('#listview').empty();
+			$('#upgradeComplete').hide();
+			$('#socialShare').hide();
+			$('#upgrade').show();
+		}
+		
+		function upgradeAppComplete() {
+			$('#listview').empty();
+			$('#upgrade').hide();
+			$('#socialShare').hide();
+			$('#upgradeComplete').show();
+		}
+		
+		function showSocial() {
+			$('#listview').empty();
+			$('#upgrade').hide();
+			$('#upgradeComplete').hide();
+			$('#socialShare').show();
+		}
+		
+		function shareLocation() {
+			var userID = webConnector.getUserID();
+			var userPWD = webConnector.getUserPWD();
+			var lat = webConnector.getGPSLat();
+			var lng = webConnector.getGPSLng();
+
+			var data = {};
+			data.user = userID;
+			data.password = userPWD;
+			data.lat = lat;
+			data.long = lng;
+		}
+		
+		function shareFacebook() {
+			window.open(
+				'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(shareURL),
+				'facebook-share-dialog', 
+				'width=300,height=436');
+		}
+		
+		function shareTwitter() {
+			var url = 'http://twitter.com/intent/tweet?text=' + encodeURIComponent(shareTitle) + '&url=' + encodeURIComponent(shareURL);
+			window.open(url);
+		}
+		
+		function shareGoogle() {
+			var url = 'https://plus.google.com/share?url=' + encodeURIComponent(shareURL);
+			window.open(url);
+		}
+		
+		function updateChat(io) {
+			var data = webConnector.svrChat();
+			
+			if (io === 'in') {
+				$('#upgrade').hide();
+				$('#upgradeComplete').hide();
+				$('#socialShare').hide();
+				$('#listview').empty();
+				
+				// clear music
+				if (musicTimer) clearInterval(musicTimer);
+				musicPos = 0;
+
+				var item =
+				"<div class=\"notice marker-on-top bg-dark padding20 text-center\">" +
+					"<h1 class=\"fg-white\" style=\"font-size: 36px; line-height: 30px; margin-bottom: 15px\">" + data + "</h1>" +
+				"</div>";
+				
+				$('#listview').append(item).trigger('create');
+			} else if (io === 'out') {
+				if (data.indexOf('<img') === -1) {
+					$('#listview').append('<p class="readable-text" style="margin-top: 15px;">' + data + '</p>');
+				}
+			}
+		}
+		
+		function updateResult() {
+			var result = JSON.parse(webConnector.svrResults());
+			var userID = webConnector.getUserID();
+			var userPWD = webConnector.getUserPWD();
+			var latlong = webConnector.getGeoLoc();
+			
+			result.poi = (result.poi || []);
+			result.img = (result.img || []);
+			result.url = (result.url || '');
+			result.map = (result.map || '');
+			
+	        if (result.context.toLowerCase() === 'location') {
+	            if (result.lat && result.lng) {
+					var url = "https://labs.godogfetch.com/apps/MapIt/MapIt.html?user=" + userID + "&password=" + userPWD + "&lat=" + result.lat + "&long=" + result.lng;
+					var width = $(window).width();
+					var item = "<iframe src=\"" + url + "\" width=\"" + width + "\" height=\"500\"></iframe>";
+					$('#listview').append('<br />' + item).trigger('create');
+				}
+			} else {
+				if (result.poi.length === 0 && result.img.length === 0) {
+//					if (result.url !== '') {
+//						window.open(result.url, '_blank');
+//					} else if (result.map && result.map !== '') {
+//						window.open(result.map, '_blank');
+//					}
+				}
+				
+                for (i = result.poi.length - 1; i >= 0; --i) {
+                    var locationIndex = (result.poi.length - i);
+                    var name = (result.poi[i].name || '');
+                    var address = (result.poi[i].address || '');
+                    var city = (result.poi[i].city || '');
+                    var state = (result.poi[i].state || '');
+                    var zip = (result.poi[i].zip || '');
+                    var phone = (result.poi[i].phone || '');
+                    var distance = (result.poi[i].distance || 0);
+                    var rating = (result.poi[i].rating || 0);
+                    var reviews = (result.poi[i].reviews || 0);
+                    var image = (result.poi[i].image || '');
+                    var url = (result.poi[i].url || '');
+
+                    var physicalAddr = address + ' ' + city + ' ' + state + ' ' + zip;
+
+                    miles = distance * 0.000621371;
+                    distance = miles.toString();
+                    m = distance.indexOf('.');
+                    if (m != -1) {
+                        distance = distance.slice(0, m + 2);
+                    }
+					
+					var item = 
+						"<div class=\"list\">" +
+							"<div class=\"list-content\">" +
+				                "<a href=\"{URL_SITE}\" target=\"_blank\"><img src=\"{URL_IMG}\" class=\"icon\" width=\"62\" height=\"62\"></a>" +
+				                "<div class=\"data\">" +
+									"<address>" +
+										"<strong><large>{NAME}</large></strong><br />" +
+										"{ADDR1}<br />" +
+										"{ADDR2}<br />" +
+										"{PHONE}<br />" +
+										"{DISTANCE}<br />" +
+									"</address>" +
+									"<img src=\"{STAR_RATING}\">" +
+				                    "<p class=\"tertiary-text fg-blue\" style=\"font-size: 16px;\">{REVIEWS}</p><br />" +
+									"<a href=\"{MAP}\" target=\"_blank\"><i class=\"icon-location fg-blue on-left-more\" style=\"font-size: 22px; {MAP_DISPLAY}\"></i></a>" +
+									"<a href=\"{NAV}\" target=\"_blank\"><i class=\"icon-location-2 fg-blue on-right-more on-left-more\" style=\"font-size: 22px; {NAV_DISPLAY}\"></i></a>" +
+									"<a href=\"tel:{URL_PHONE}\" target=\"_blank\"><i class=\"icon-phone fg-blue on-right-more on-left-more\" style=\"font-size: 22px; {PHONE_DISPLAY}\"></i></a>" +
+									"<a href=\"{URL_SITE}\" target=\"_blank\"><i class=\"icon-globe fg-blue on-right-more on-left-more\" style=\"font-size: 22px; {URL_DISPLAY}\"></i></a>" +
+								"</div>" +
+			                "</div>" +
+			            "</div>";
+						
+					var locationUrl = encodeURIComponent(address + ' ' + city + ' ' + state + ' ' + zip);
+					var callUrl     = phone.replace(/[^0-9]/g, '');
+						
+					item = item.replace(/{NAME}/g, (result.poi.length - i) + '. ' + name);
+					item = item.replace(/{URL_SITE}/g, url);
+					item = item.replace(/{URL_IMG}/g, (image !== '' ? image : 'https://labs.godogfetch.com/img/no-image-avatar.jpg'));
+					item = item.replace(/{ADDR1}/g, address);
+					item = item.replace(/{ADDR2}/g, city + ', ' + state + ' ' + zip);
+					item = item.replace(/{PHONE}/g, phone);
+					item = item.replace(/{URL_PHONE}/g, callUrl);
+					item = item.replace(/{DISTANCE}/g, distance + ' mi');
+					item = item.replace(/{REVIEWS}/g, reviews + ' reviews');
+					item = item.replace(/{MAP}/g, 'https://maps.google.com/maps?q=' + address + ' ' + city + ' ' + zip);
+					item = item.replace(/{NAV}/g, 'https://maps.google.com/maps?saddr=' + latlong + '&daddr=' + locationUrl);
+					
+					item = item.replace(/{MAP_DISPLAY}/g, (address === '') ? 'display: none;' : '');
+					item = item.replace(/{NAV_DISPLAY}/g, (address === '') ? 'display: none;' : '');
+					item = item.replace(/{PHONE_DISPLAY}/g, (callUrl === '') ? 'display: none;' : '');
+					item = item.replace(/{URL_DISPLAY}/g, (url === '') ? 'display: none;' : '');
+					
+					rating = Math.round(rating / 0.5) * 0.5;
+					switch (rating) {
+						case 0.0:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_0.0.png');
+							break;
+							
+						case 0.5:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_0.5.png');
+							break;
+							
+						case 1.0:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_1.0.png');
+							break;
+							
+						case 1.5:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_1.5.png');
+							break;
+							
+						case 2.0:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_2.0.png');
+							break;
+							
+						case 2.5:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_2.5.png');
+							break;
+							
+						case 3.0:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_3.0.png');
+							break;
+							
+						case 3.5:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_3.5.png');
+							break;
+							
+						case 4.0:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_4.0.png');
+							break;
+							
+						case 4.5:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_4.5.png');
+							break;
+							
+						case 5.0:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_5.0.png');
+							break;
+							
+						default:
+							item = item.replace(/{STAR_RATING}/g, 'https://labs.godogfetch.com/img/stars_0.0.png');
+							break;
+					}
+					
+					$('#listview').append(item).trigger('create');
+				}
+				
+				for (i = 0; i < result.img.length; ++i) {
+					if (result.img[i]) {
+						$('#listview').append('<p>' + result.img[i] + '</p>').trigger('create');
+					}
+				}
+			}
+			
+			if (result.html) {
+				for (i = 0; i < result.html.length; ++i) {
+					$('#listview').append(result.html[i]).trigger('create');
+				}
+			}
+		}
+		
+		function showVoiceCommands() {
+			var $vcTemplate = $('#vcLocationTemplate');
+			var $item = $vcTemplate.clone();
+			$('#listview').append($item).trigger('create');
+			$item.removeAttr('id');
+			$item.show();
+			
+			$vcTemplate = $('#vcConversationsTemplate');
+			$item = $vcTemplate.clone();
+			$('#listview').append($item).trigger('create');
+			$item.removeAttr('id');
+			$item.show();
+			
+			$vcTemplate = $('#vcNavTemplate');
+			$item = $vcTemplate.clone();
+			$('#listview').append($item).trigger('create');
+			$item.removeAttr('id');
+			$item.show();
+		}
+		
+		function showWeather(weather) {
+			try {
+				var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN", "MON", "TUE"];
+				var dow = 0;
+				var imgCurrent = weather.data.current_condition[0].weatherIconUrl[0].value;
+				var imgDay2    = weather.data.weather[1].hourly[0].weatherIconUrl[0].value;
+				var imgDay3    = weather.data.weather[2].hourly[0].weatherIconUrl[0].value;
+				var imgDay4    = weather.data.weather[3].hourly[0].weatherIconUrl[0].value;
+				var n;
+				
+				var $weatherTemplate = $('#weatherTemplate');
+				var $weatherItem = $weatherTemplate.clone();
+				$('#listview').append($weatherItem).trigger('create');
+
+				// current days icon
+				if ((n = imgCurrent.lastIndexOf('/')) !== -1) {
+					imgCurrent = "https://labs.godogfetch.com/img/weather" + imgCurrent.slice(n);
+				}
+				$weatherItem.find('[data-loc-type=imgCurrent]').attr('src', imgCurrent);
+				
+				// day 2 icon
+				if ((n = imgDay2.lastIndexOf('/')) !== -1) {
+					imgDay2 = "https://labs.godogfetch.com/img/weather" + imgDay2.slice(n);
+				}
+				$weatherItem.find('[data-loc-type=imgDay2]').attr('src', imgDay2);
+				
+				// day 3 icon
+				if ((n = imgDay3.lastIndexOf('/')) !== -1) {
+					imgDay3 = "https://labs.godogfetch.com/img/weather" + imgDay3.slice(n);
+				}
+				$weatherItem.find('[data-loc-type=imgDay3]').attr('src', imgDay3);
+				
+				// day 4 icon
+				if ((n = imgDay4.lastIndexOf('/')) !== -1) {
+					imgDay4 = "https://labs.godogfetch.com/img/weather" + imgDay4.slice(n);
+				}
+				$weatherItem.find('[data-loc-type=imgDay4]').attr('src', imgDay4);
+				
+				$weatherItem.find('[data-loc-type=degree]').html(weather.data.current_condition[0].temp_F + "&deg; " + weather.data.current_condition[0].weatherDesc[0].value);
+
+				var d = new Date();
+				dow = d.getDay();
+				
+				$weatherItem.find('[data-loc-type=txtDay2]').text(days[dow+1]);
+				$weatherItem.find('[data-loc-type=txtDay2Temp]').html(weather.data.weather[1].maxtempF + '&deg; / ' + weather.data.weather[1].mintempF + '&deg;');
+
+				$weatherItem.find('[data-loc-type=txtDay3]').text(days[dow+2]);
+				$weatherItem.find('[data-loc-type=txtDay3Temp]').html(weather.data.weather[2].maxtempF + '&deg; / ' + weather.data.weather[2].mintempF + '&deg;');
+				
+				$weatherItem.find('[data-loc-type=txtDay4]').text(days[dow+3]);
+				$weatherItem.find('[data-loc-type=txtDay4Temp]').html(weather.data.weather[3].maxtempF + '&deg; / ' + weather.data.weather[3].mintempF + '&deg;');
+
+				$weatherItem.removeAttr('id');
+				
+				$weatherItem.show();
+			} catch (err) {
+			}
+		}
+		
+		function showReminders() {
+		}
+		
+		function showCalendar() {
+		}
+		
+		function showNews() {
+		}
+			
+		function getLatLong() {
+			navigator.geolocation.getCurrentPosition(GetLocation);
+			function GetLocation(location) {
+				window.godog.setLatLong(location.coords.latitude, location.coords.longitude);
+			}
+		}
+		
+		function launchURL(url) {
+			var item = "<button class=\"button link\" onclick=\"moreResults('');\">View more results...</button>";
+			moreResultsURL = url;
+			
+			$('#listview').append('<br />' + item).trigger('create');
+		}
+		
+		function moreResults() {
+			window.open(moreResultsURL, '_blank');
+		}
+		
+		function upgradePremium() {
+			webConnector.upgradePremium();
+		}
+		
+		function upgradePremiumSub() {
+			webConnector.upgradePremiumSub();
+		}
+		
+		function search(q) {
+			webConnector.search();
+		}
+		
+		var musicPos = 0, musicDuration = 0, musicTimer = null;
+		function changeMusicState(state) {
+			if (state === 'pause') {
+				pauseMusic();
+				$('#btnMusicPause').hide();
+				$('#btnMusicPlay').show();
+			} else {
+				playMusic();
+				$('#btnMusicPlay').hide();
+				$('#btnMusicPause').show();
+			}
+		}
+		
+		function resetMusicPos() {
+			if (musicTimer) clearInterval(musicTimer);
+			musicPos = 0;
+			$('#idMusicBar').progressbar({
+			    value: 0,
+			    color: 'bg-blue'
+			});
+		}
+		
+		function setMusicTimeout(duration) {
+			if (musicTimer) clearInterval(musicTimer);
+			if (duration === 0) return;
+			musicDuration = duration;
+			var pos = parseInt((musicPos / musicDuration) * 100);
+			if (pos > 100) pos = 100;
+			$('#idMusicBar').progressbar({
+			    value: pos,
+			    color: 'bg-blue'
+			});
+			
+			musicTimer = setInterval(function() {
+				musicPos += 1000;
+				if (musicPos > musicDuration) {
+					clearInterval(musicTimer);
+					musicPos = 0;
+					$('#idMusicBar').progressbar('value', 0);
+					
+					activeSong++;
+					if (activeSong >= playList.length) activeSong = 0; // reach end of list / repeat
+					playMusicFromUri(playList[activeSong].file, playList[activeSong].song, playList[activeSong].artist, playList[activeSong].duration);
+				} else {
+					var curpos = parseInt((musicPos / musicDuration) * 100);
+					if (curpos > 100) curpos = 100;
+					$('#idMusicBar').progressbar('value', curpos);
+				}
+			}, 1000);
+		}
+
+		function playMusicFromUri(uri, song, artist, duration) {
+			if (musicTimer) {
+				clearInterval(musicTimer);
+				$('#idMusicBar').progressbar({
+				    value: 0,
+				    color: 'bg-blue'
+				});
+			}
+			webConnector.playMusicFromUri(uri);
+			
+			musicPos = 0;
+			musicDuration = duration;
+			
+			setMusicTimeout(duration);
+			
+			$('#idSongName').text(decodeURIComponent(song));
+			$('#idArtistName').text("By " + decodeURIComponent(artist));
+		}
+		
+		function playMusic() {
+			setMusicTimeout(musicDuration);
+			webConnector.playMusic();
+		}
+		
+		function pauseMusic() {
+			if (musicTimer) clearInterval(musicTimer);
+			webConnector.pauseMusic();
+		}
+		
+		function stopMusic() {
+			if (musicTimer) clearInterval(musicTimer);
+			musicPos = 0;
+			$('#idMusicBar').progressbar({
+			    value: 0,
+			    color: 'bg-blue'
+			});
+			webConnector.stopMusic();
+		}
+		
+		function nextTrack() {
+			if (musicTimer) clearInterval(musicTimer);
+			musicPos = 0;
+			$('#idMusicBar').progressbar('value', 0);
+			
+			activeSong++;
+			if (activeSong >= playList.length) activeSong = 0; // reach end of list / repeat
+			playMusicFromUri(playList[activeSong].file, playList[activeSong].song, playList[activeSong].artist, playList[activeSong].duration);
+		}
+		
+		function prevTrack() {
+			if (musicTimer) clearInterval(musicTimer);
+			musicPos = 0;
+			$('#idMusicBar').progressbar('value', 0);
+			
+			activeSong--;
+			if (activeSong < 0) activeSong = playList.length - 1; // reach start of list / repeat
+			playMusicFromUri(playList[activeSong].file, playList[activeSong].song, playList[activeSong].artist, playList[activeSong].duration);
+		}
+	</script>
+
+	<div id="vcLocationTemplate" class="panel" style="display: none; margin-bottom: 10px;">
+		<div class="panel-header bg-emerald fg-white">
+			Finding a Location
+		</div>
+		<div class="panel-content fg-dark" style="background-color: #F4F4F4">
+			<div class="grid">
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;Find pizza&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;Where's the nearest restaurant&quot;</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;Find restaurants with coupons&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;I want Italian food&quot;</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;Get me sushi&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;Where's an Irish pub&quot;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="vcConversationsTemplate" class="panel" style="display: none; margin-bottom: 10px;">
+		<div class="panel-header bg-darkMagenta fg-white">
+			Calculating Stuff
+		</div>
+		<div class="panel-content fg-dark" style="background-color: #F4F4F4">
+			<div class="grid">
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;What's 20% of 82&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;How many feet in 10 miles&quot;</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;Distance from Earth to Mars&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;What's the population of China&quot;</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;What is the weight of the Earth&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;What is the population difference between India and the United States&quot;</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;What is the meaning of life&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;How much wood would a woodchuck chuck if a woodchuck could chuck wood&quot;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="vcNavTemplate" class="panel" style="display: none; margin-bottom: 10px;">
+		<div class="panel-header bg-orange fg-white">
+			Driving Directions & Navigation
+		</div>
+		<div class="panel-content fg-dark" style="background-color: #F4F4F4">
+			<div class="grid">
+				<div class="row">
+					<div class="span4">
+						<p class="readable-text">&quot;Navigate to 100 Park Blvd San Diego&quot;</p>
+					</div>
+					<div class="span4">
+						<p class="readable-text">&quot;Driving directions to Walmart&quot;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="weatherTemplate" class="notice marker-on-top bg-blue padding10 text-center" style="display: none; margin-top: 20px; margin-bottom: 20px;">
+		<table class="bg-blue fg-white" border="0" cellpadding="1" cellspacing="1" style="width: 260px;" align="center">
+			<tbody>
+				<tr>
+					<td style="text-align: center;">
+						<img style="width: 84px; height: 84px;" data-loc-type="imgCurrent" src="" /></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">
+						<h1 class="fg-white" style="font-size: 50px; line-height: 50px;" data-loc-type="degree"></h1></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="bg-blue fg-white" border="0" cellpadding="1" cellspacing="1" style="width: 260px;" align="center">
+			<tbody>
+				<tr>
+					<td style="text-align: center; width: 70px; height: 20px;">
+						<span style="font-size:13px;"><strong><span style="font-family:arial,helvetica,sans-serif;" data-loc-type="txtDay2"></span></strong></span></td>
+					<td style="text-align: center; width: 70px; height: 20px;">
+						<span style="font-size:13px;"><strong><span style="font-family:arial,helvetica,sans-serif;" data-loc-type="txtDay3"></span></strong></span></td>
+					<td style="text-align: center; width: 70px; height: 20px;">
+						<span style="font-size:13px;"><strong><span style="font-family:arial,helvetica,sans-serif;" data-loc-type="txtDay4"></span></strong></span></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">
+						<span style="font-family:arial,helvetica,sans-serif;"><img style="width: 48px; height: 48px;" data-loc-type="imgDay2" src="" /></span></td>
+					<td style="text-align: center;">
+						<span style="font-family:arial,helvetica,sans-serif;"><img style="width: 48px; height: 48px;" data-loc-type="imgDay3" src="" /></span></td>
+					<td style="text-align: center;">
+						<span style="font-family:arial,helvetica,sans-serif;"><img style="width: 48px; height: 48px;" data-loc-type="imgDay4" src="" /></span></td>
+				</tr>
+				<tr>
+					<td style="text-align: center; height: 20px;">
+						<span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;" data-loc-type="txtDay2Temp"></span></span></td>
+					<td style="text-align: center; height: 20px;">
+						<span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;" data-loc-type="txtDay3Temp"></span></span></td>
+					<td style="text-align: center; height: 20px;">
+						<span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;" data-loc-type="txtDay4Temp"></span></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="upgrade" class="upgrade" style="display: none; margin: 14px;">
+		<fieldset>
+			<div>
+				<h2>Upgrade to Premium</h2>
+				<button class="button success" onclick="upgradePremiumSub();" style="min-width: 120px; font-size: 16px; padding: 5px;">
+					$4.99 Annual
+				</button>
+				<button class="button success" onclick="upgradePremium();" style="min-width: 120px; font-size: 16px; padding: 5px;">
+					$7.99 Lifetime
+				</button>
+			</div>
+			<div style="margin: 15pt;">
+				<dl>
+					<dt>All Voices</dt>
+					<dd>Customize your goDog with 13 personalities</dd><br />
+					<dt>All Platforms</dt>
+					<dd>Use goDog Fetch from all your devices, Android, Tablet, iPhone (coming soon), Windows PC and Mac</dd>
+					<dd>
+					<img src="https://labs.godogfetch.com/img/all_platforms.png" width="500px"/></dd><br />
+					<dt>Free Updates</dt>
+					<dd>Get the newest features free</dd><br />
+					<dt>Ad Free</dt>
+					<dd>No pesky annoying ads</dd>
+				</dl>
+			</div>
+			<p><small><strong>Refunds/Digital Downloads:</strong> All sales are FINAL and all charges from those sales are non-refundable.</small></p>
+		</fieldset>
+	</div>
+	
+	<div id="upgradeComplete" class="upgrade" style="display: none; margin: 20px;">
+		<fieldset>
+			<div>
+				<h2>Upgrade Complete</h2>
+				<br />
+				<p>Thank you for your upgrade!</p>
+				<br />
+				<p>Sincerely,</p>
+				<p><strong>Team goDog</strong></p>
+			</div>
+		</fieldset>
+	</div>
+	
+	<div id="socialShare" class="upgrade" style="display: none; margin: 14px;">
+<!--		<h2>Share your Location!</h2><br>
+		<button class="button large fg-white bg-emerald" style="width: 220px;" onclick="shareLocation();"><i class="icon-location on-left"></i>Share your location</button><br><br>-->
+		<h2>Share your Dog!</h2><br>
+		<button class="button large fg-white bg-darkBlue" style="width: 220px;" onclick="shareFacebook();"><i class="icon-facebook on-left"></i>Share on Facebook</button><br><br>
+		<button class="button large fg-white bg-lightBlue" style="width: 220px;" onclick="shareTwitter();"><i class="icon-twitter on-left"></i>Share on Twitter</button><br><br>
+		<button class="button large fg-white bg-crimson" style="width: 220px;" onclick="shareGoogle();"><i class="icon-google-plus on-left"></i>Share on Google+</button><br><br>
+	</div>
+	
+	<div class="container" style="margin:10px 10px 10px 10px; padding-bottom: 5px;">
+		<div class="conversation" data-role="content">
+			<div id="listview" class="listview" style="margin-top: 10px; margin-bottom: 10px;">
+			</div>
+		</div>
+	</div>
+		
+    </body>
+</html>

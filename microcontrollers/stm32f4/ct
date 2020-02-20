@@ -1,0 +1,7 @@
+echo "Running  ctags -R Src/* Inc/* Drivers/* STM32_USB_Device_Library/* " 
+echo "Please wait ..." 
+rm tags 
+ctags -R Src/* Inc/* Drivers/* STM32_USB_Device_Library/*
+
+echo "Done." 
+

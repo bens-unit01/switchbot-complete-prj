@@ -1,0 +1,4 @@
+#!/bin/bash
+export PATH=/c/Development/BLE/NORDIC_DEV/nrf51822_sdk/arm-gcc/bin:$PATH
+arm-none-eabi-gdb _build/ble_app_hrs_c_s120.elf -x gdbinit
+

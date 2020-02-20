@@ -1,0 +1,179 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+APP_RX_DATA_SIZE	.\usbd_cdc_interface.c	7;"	d	file:
+APP_TX_DATA_SIZE	.\usbd_cdc_interface.c	8;"	d	file:
+BuffLength	.\usbd_cdc_interface.c	/^uint32_t BuffLength;$/;"	v
+BusFault_Handler	.\stm32f4xx_it.c	/^void BusFault_Handler(void)$/;"	f
+CDC_Itf_Control	.\usbd_cdc_interface.c	/^static int8_t CDC_Itf_Control (uint8_t cmd, uint8_t* pbuf, uint16_t length)$/;"	f	file:
+CDC_Itf_DeInit	.\usbd_cdc_interface.c	/^static int8_t CDC_Itf_DeInit(void)$/;"	f	file:
+CDC_Itf_Init	.\usbd_cdc_interface.c	/^static int8_t CDC_Itf_Init(void)$/;"	f	file:
+CDC_Itf_Receive	.\usbd_cdc_interface.c	/^static int8_t CDC_Itf_Receive(uint8_t* Buf, uint32_t *Len)$/;"	f	file:
+CYCCNTENA	.\util.c	12;"	d	file:
+DEVICE_ID1	.\usbd_desc.c	13;"	d	file:
+DEVICE_ID2	.\usbd_desc.c	14;"	d	file:
+DEVICE_ID3	.\usbd_desc.c	15;"	d	file:
+DWT_CTRL	.\util.c	11;"	d	file:
+DWT_CYCCNT	.\util.c	13;"	d	file:
+DebugMon_Handler	.\stm32f4xx_it.c	/^void DebugMon_Handler(void)$/;"	f
+Error_Handler	.\main.c	/^void Error_Handler(void)$/;"	f
+Get_SerialNum	.\usbd_desc.c	/^static void Get_SerialNum(void)$/;"	f	file:
+HAL_Delay	.\util.c	/^void HAL_Delay(uint32_t Delay)$/;"	f
+HAL_I2S_MspDeInit	.\stm32f4xx_hal_msp.c	/^void HAL_I2S_MspDeInit(I2S_HandleTypeDef* hi2s)$/;"	f
+HAL_I2S_MspInit	.\stm32f4xx_hal_msp.c	/^void HAL_I2S_MspInit(I2S_HandleTypeDef* hi2s)$/;"	f
+HAL_MspInit	.\stm32f4xx_hal_msp.c	/^void HAL_MspInit(void)$/;"	f
+HAL_PCD_ConnectCallback	.\usbd_conf.c	/^void HAL_PCD_ConnectCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_DataInStageCallback	.\usbd_conf.c	/^void HAL_PCD_DataInStageCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)$/;"	f
+HAL_PCD_DataOutStageCallback	.\usbd_conf.c	/^void HAL_PCD_DataOutStageCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)$/;"	f
+HAL_PCD_DisconnectCallback	.\usbd_conf.c	/^void HAL_PCD_DisconnectCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_ISOINIncompleteCallback	.\usbd_conf.c	/^void HAL_PCD_ISOINIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)$/;"	f
+HAL_PCD_ISOOUTIncompleteCallback	.\usbd_conf.c	/^void HAL_PCD_ISOOUTIncompleteCallback(PCD_HandleTypeDef *hpcd, uint8_t epnum)$/;"	f
+HAL_PCD_MspDeInit	.\usbd_conf.c	/^void HAL_PCD_MspDeInit(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_MspDeInit_C	.\stm32f4xx_hal_msp.c	/^void HAL_PCD_MspDeInit_C(PCD_HandleTypeDef* hpcd)$/;"	f
+HAL_PCD_MspInit	.\usbd_conf.c	/^void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_MspInit_C	.\stm32f4xx_hal_msp.c	/^void HAL_PCD_MspInit_C(PCD_HandleTypeDef* hpcd)$/;"	f
+HAL_PCD_ResetCallback	.\usbd_conf.c	/^void HAL_PCD_ResetCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_ResumeCallback	.\usbd_conf.c	/^void HAL_PCD_ResumeCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_SOFCallback	.\usbd_conf.c	/^void HAL_PCD_SOFCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_SetupStageCallback	.\usbd_conf.c	/^void HAL_PCD_SetupStageCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_PCD_SuspendCallback	.\usbd_conf.c	/^void HAL_PCD_SuspendCallback(PCD_HandleTypeDef *hpcd)$/;"	f
+HAL_SPI_MspDeInit	.\stm32f4xx_hal_msp.c	/^void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)$/;"	f
+HAL_SPI_MspInit	.\stm32f4xx_hal_msp.c	/^void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)$/;"	f
+HAL_TIM_Base_MspDeInit	.\stm32f4xx_hal_msp.c	/^void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)$/;"	f
+HAL_TIM_Base_MspInit	.\stm32f4xx_hal_msp.c	/^void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)$/;"	f
+HAL_TIM_MspPostInit	.\stm32f4xx_hal_msp.c	/^void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)$/;"	f
+HAL_TIM_PeriodElapsedCallback	.\usbd_cdc_interface.c	/^void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)$/;"	f
+HAL_UART_ErrorCallback	.\usart.c	/^ void HAL_UART_ErrorCallback(UART_HandleTypeDef *UartHandle)$/;"	f
+HAL_UART_MspDeInit	.\stm32f4xx_hal_msp.c	/^void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)$/;"	f
+HAL_UART_MspInit	.\stm32f4xx_hal_msp.c	/^void HAL_UART_MspInit(UART_HandleTypeDef* huart)$/;"	f
+HAL_UART_RxCpltCallback	.\usart.c	/^void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)$/;"	f
+HAL_UART_TxCpltCallback	.\usart.c	/^void HAL_UART_TxCpltCallback(UART_HandleTypeDef *UartHandle)$/;"	f
+HardFault_Handler	.\stm32f4xx_it.c	/^void HardFault_Handler(void)$/;"	f
+IntToUnicode	.\usbd_desc.c	/^static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len)$/;"	f	file:
+LineCoding	.\usbd_cdc_interface.c	/^USBD_CDC_LineCodingTypeDef LineCoding = {$/;"	v
+MAX_ATTEMPTS	.\usart.c	50;"	d	file:
+MX_GPIO_Init	.\main.c	/^void MX_GPIO_Init(void)$/;"	f
+MX_I2S3_Init	.\main.c	/^void MX_I2S3_Init(void)$/;"	f
+MX_SPI1_Init	.\main.c	/^void MX_SPI1_Init(void)$/;"	f
+MX_SPI2_Init	.\main.c	/^void MX_SPI2_Init(void)$/;"	f
+MX_TIM1_Init	.\main.c	/^void MX_TIM1_Init(void)$/;"	f
+MX_TIM2_Init	.\main.c	/^void MX_TIM2_Init(void)$/;"	f
+MX_TIM3_Init	.\main.c	/^void MX_TIM3_Init(void)$/;"	f
+MX_TIM4_Init	.\main.c	/^void MX_TIM4_Init(void)$/;"	f
+MX_USART1_UART_Init	.\usart.c	/^void MX_USART1_UART_Init(void)$/;"	f
+MX_USART3_UART_Init	.\usart.c	/^void MX_USART3_UART_Init(void)$/;"	f
+MX_USART3_UART_Init_c	.\main.c	/^void MX_USART3_UART_Init_c(void)$/;"	f
+MX_USB_OTG_FS_PCD_Init	.\main.c	/^void MX_USB_OTG_FS_PCD_Init(void)$/;"	f
+MemManage_Handler	.\stm32f4xx_it.c	/^void MemManage_Handler(void)$/;"	f
+NMI_Handler	.\stm32f4xx_it.c	/^void NMI_Handler(void)$/;"	f
+OTG_HS_IRQHandler	.\stm32f4xx_it.c	/^void OTG_HS_IRQHandler(void)$/;"	f
+PACKET_SIZE	.\usart.c	48;"	d	file:
+RX1Data	.\usart.c	/^uint8_t  RX1Data[PACKET_SIZE] = {0};	$/;"	v
+RX3Data	.\usart.c	/^uint8_t  RX3Data[PACKET_SIZE] = {0};						\/\/UART0BytesSent is a value set in Robot Values that signifies the number of bytes that will be sent by UART0$/;"	v
+SysTick_Handler	.\stm32f4xx_it.c	/^void SysTick_Handler(void)$/;"	f
+SystemClock_Config	.\main.c	/^void SystemClock_Config(void)$/;"	f
+TIM4_IRQHandler	.\stm32f4xx_it.c	/^void TIM4_IRQHandler(void)$/;"	f
+TIM_Config	.\usbd_cdc_interface.c	/^static void TIM_Config(void)$/;"	f	file:
+TimHandle	.\usbd_cdc_interface.c	/^TIM_HandleTypeDef  TimHandle;$/;"	v
+UART_TIMEOUT	.\usart.c	49;"	d	file:
+USART1_IRQHandler	.\usart.c	/^void USART1_IRQHandler(void)$/;"	f
+USART3_IRQHandler	.\usart.c	/^void USART3_IRQHandler(void)$/;"	f
+USBD_CDC_fops	.\usbd_cdc_interface.c	/^USBD_CDC_ItfTypeDef USBD_CDC_fops = {$/;"	v
+USBD_CONFIGURATION_FS_STRING	.\usbd_desc.c	10;"	d	file:
+USBD_Device	.\main.c	/^USBD_HandleTypeDef USBD_Device;$/;"	v
+USBD_INTERFACE_FS_STRING	.\usbd_desc.c	11;"	d	file:
+USBD_LANGID_STRING	.\usbd_desc.c	7;"	d	file:
+USBD_LL_ClearStallEP	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_ClearStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)$/;"	f
+USBD_LL_CloseEP	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_CloseEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)$/;"	f
+USBD_LL_DeInit	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_DeInit(USBD_HandleTypeDef *pdev)$/;"	f
+USBD_LL_Delay	.\usbd_conf.c	/^void USBD_LL_Delay(uint32_t Delay)$/;"	f
+USBD_LL_FlushEP	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_FlushEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)$/;"	f
+USBD_LL_GetRxDataSize	.\usbd_conf.c	/^uint32_t USBD_LL_GetRxDataSize(USBD_HandleTypeDef *pdev, uint8_t ep_addr)$/;"	f
+USBD_LL_Init	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)$/;"	f
+USBD_LL_IsStallEP	.\usbd_conf.c	/^uint8_t USBD_LL_IsStallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)$/;"	f
+USBD_LL_OpenEP	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_OpenEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr, uint8_t ep_type, uint16_t ep_mps)$/;"	f
+USBD_LL_PrepareReceive	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_PrepareReceive(USBD_HandleTypeDef *pdev, uint8_t ep_addr, uint8_t *pbuf, uint16_t size)$/;"	f
+USBD_LL_SetUSBAddress	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_SetUSBAddress(USBD_HandleTypeDef *pdev, uint8_t dev_addr)$/;"	f
+USBD_LL_StallEP	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_StallEP(USBD_HandleTypeDef *pdev, uint8_t ep_addr)$/;"	f
+USBD_LL_Start	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_Start(USBD_HandleTypeDef *pdev)$/;"	f
+USBD_LL_Stop	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_Stop(USBD_HandleTypeDef *pdev)$/;"	f
+USBD_LL_Transmit	.\usbd_conf.c	/^USBD_StatusTypeDef USBD_LL_Transmit(USBD_HandleTypeDef *pdev, uint8_t ep_addr, uint8_t *pbuf, uint16_t size)$/;"	f
+USBD_MANUFACTURER_STRING	.\usbd_desc.c	8;"	d	file:
+USBD_PID	.\usbd_desc.c	6;"	d	file:
+USBD_PRODUCT_STRING	.\usbd_desc.c	9;"	d	file:
+USBD_StringSerial	.\usbd_desc.c	/^uint8_t USBD_StringSerial[USB_SIZ_STRING_SERIAL] =$/;"	v
+USBD_VCP_ConfigStrDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_ConfigStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VCP_DeviceDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_DeviceDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VCP_InterfaceStrDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VCP_LangIDStrDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_LangIDStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VCP_ManufacturerStrDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VCP_ProductStrDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_ProductStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VCP_SerialStrDescriptor	.\usbd_desc.c	/^uint8_t *USBD_VCP_SerialStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)$/;"	f
+USBD_VID	.\usbd_desc.c	5;"	d	file:
+USB_SIZ_STRING_SERIAL	.\usbd_desc.c	17;"	d	file:
+USE_USB_FS	.\usbd_conf.c	5;"	d	file:
+USE_USB_HS	.\usbd_conf.c	6;"	d	file:
+UartHandle	.\usbd_cdc_interface.c	/^UART_HandleTypeDef UartHandle;$/;"	v
+UsageFault_Handler	.\stm32f4xx_it.c	/^void UsageFault_Handler(void)$/;"	f
+UserRxBuffer	.\usbd_cdc_interface.c	/^uint8_t UserRxBuffer[APP_RX_DATA_SIZE];\/* Received Data over USB are stored in this buffer *\/$/;"	v
+UserTxBufPtrIn	.\usbd_cdc_interface.c	/^uint32_t UserTxBufPtrIn = 0;\/* Increment this pointer or roll it back to start address when data are received over USART *\/$/;"	v
+UserTxBufPtrOut	.\usbd_cdc_interface.c	/^uint32_t UserTxBufPtrOut = 0; \/* Increment this pointer or roll it back to start address when data are sent over USB *\/$/;"	v
+UserTxBuffer	.\usbd_cdc_interface.c	/^uint8_t UserTxBuffer[APP_TX_DATA_SIZE];\/* Received Data over UART (CDC interface) are stored in this buffer *\/$/;"	v
+VCP_Desc	.\usbd_desc.c	/^USBD_DescriptorsTypeDef VCP_Desc = {$/;"	v
+__ALIGN_END	.\usbd_desc.c	/^__ALIGN_BEGIN uint8_t USBD_DeviceDesc[USB_LEN_DEV_DESC] __ALIGN_END = {$/;"	v
+__ALIGN_END	.\usbd_desc.c	/^__ALIGN_BEGIN uint8_t USBD_LangIDDesc[USB_LEN_LANGID_STR_DESC] __ALIGN_END = {$/;"	v
+__ALIGN_END	.\usbd_desc.c	/^__ALIGN_BEGIN uint8_t USBD_StrDesc[USBD_MAX_STR_DESC_SIZ] __ALIGN_END;$/;"	v
+__io_getchar	.\usbd_cdc_interface.c	/^int __io_getchar(void)$/;"	f
+__io_putchar	.\usbd_cdc_interface.c	/^int __io_putchar(int ch)$/;"	f
+assert_failed	.\main.c	/^void assert_failed(uint8_t* file, uint32_t line)$/;"	f
+buffer	.\usart.c	/^uint8_t buffer[20] = {0};$/;"	v
+button0	.\main.c	/^int8_t button0 = 0;$/;"	v
+cdcHandle	.\usbd_conf.c	/^USBD_CDC_HandleTypeDef cdcHandle;$/;"	v
+cdc_fifo_put	.\usbd_cdc_interface.c	/^static bool cdc_fifo_put(const char val)$/;"	f	file:
+cdc_write	.\usbd_cdc_interface.c	/^static int cdc_write(const char *buf, int len)$/;"	f	file:
+controller	.\main.c	/^void controller()$/;"	f
+delayInit	.\util.c	/^void delayInit(void)$/;"	f
+delayWaitms	.\util.c	/^void delayWaitms(uint32_t mS)$/;"	f
+delayWaitus	.\util.c	/^void delayWaitus(uint32_t uS)$/;"	f
+disableMotors	.\motors.c	/^void disableMotors()$/;"	f
+driveMotors	.\motors.c	/^void driveMotors(float u[])$/;"	f
+drive_counter	.\main.c	/^static uint16_t drive_counter = 0; $/;"	v	file:
+drive_flag	.\main.c	/^static bool drive_flag = false; $/;"	v	file:
+dump	.\util.c	/^void dump(uint8_t *buf, int len)$/;"	f
+enableMotors	.\motors.c	/^void enableMotors()$/;"	f
+fputc	.\usbd_cdc_interface.c	/^int fputc(int ch, FILE *fp)$/;"	f
+hdma_usart2_tx	.\usart.c	/^DMA_HandleTypeDef hdma_usart2_tx;$/;"	v
+hi2s3	.\main.c	/^I2S_HandleTypeDef hi2s3;$/;"	v
+hpcd	.\usbd_conf.c	/^PCD_HandleTypeDef hpcd;$/;"	v
+hpcd_USB_OTG_FS	.\main.c	/^PCD_HandleTypeDef hpcd_USB_OTG_FS;$/;"	v
+hspi1	.\main.c	/^SPI_HandleTypeDef hspi1;$/;"	v
+hspi2	.\main.c	/^SPI_HandleTypeDef hspi2;$/;"	v
+htim1	.\main.c	/^TIM_HandleTypeDef htim1;$/;"	v
+htim2	.\main.c	/^TIM_HandleTypeDef htim2;$/;"	v
+htim3	.\main.c	/^TIM_HandleTypeDef htim3;$/;"	v
+htim4	.\main.c	/^TIM_HandleTypeDef htim4;$/;"	v
+huart1	.\usart.c	/^UART_HandleTypeDef huart1;$/;"	v
+huart3	.\usart.c	/^UART_HandleTypeDef huart3;$/;"	v
+joy	.\main.c	/^float joy[4] = {0};$/;"	v
+main	.\main.c	/^int main(void)$/;"	f
+millis	.\usart.c	/^uint32_t millis(void) {$/;"	f
+mode	.\main.c	/^int8_t mode = 3;$/;"	v
+modeOld	.\main.c	/^int8_t modeOld = 0;$/;"	v
+motor_dir	.\motors.c	/^void motor_dir(bool val, uint8_t motor_id) { $/;"	f
+motor_enable	.\motors.c	/^void motor_enable(uint8_t motor_id){$/;"	f
+parseUARTbuffer	.\usart.c	/^int parseUARTbuffer(float joy[])$/;"	f
+reset_IT	.\usart.c	/^void reset_IT(UART_HandleTypeDef *UartHandle)$/;"	f
+send_with_ack	.\usart.c	/^static void send_with_ack(uint8_t byte_to_send_1, uint8_t byte_to_send_2){$/;"	f	file:
+stateMachine	.\main.c	/^void stateMachine()$/;"	f
+ticks	.\util.c	/^static volatile uint32_t ticks = 0;$/;"	v	file:
+timestamp1	.\usart.c	/^uint32_t timestamp1 = 0;$/;"	v
+timestamp6	.\usart.c	/^uint32_t timestamp6 = 0;$/;"	v
+u	.\main.c	/^float u[6] = {0};$/;"	v
+uart_put	.\usart.c	/^void uart_put(uint8_t uart_port, uint8_t ch)$/;"	f
+us_ticks	.\util.c	/^static uint32_t us_ticks;$/;"	v	file:
+usb_init	.\main.c	/^void usb_init(void)$/;"	f
+vp_cdcHandle	.\usbd_conf.c	/^void *vp_cdcHandle = &cdcHandle;$/;"	v
+writeMotors	.\motors.c	/^void writeMotors(uint32_t* MotorPWM)$/;"	f

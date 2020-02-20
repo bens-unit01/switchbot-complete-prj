@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="40dp"
+        android:padding="5dp" >
+    </RelativeLayout>
+  
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:padding="10dp">
+    <!--   ===========================    status leds               ================ -->
+    
+   <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="System status"
+            android:padding="10dp"/>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/blue2"
+        android:padding="10dp"
+         >
+  
+       <!--  <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <ImageButton
+                android:id="@+id/btnLedBluetooth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_led_states"
+                android:padding="10dp" />
+
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Bluetooth connection"
+                   android:layout_marginLeft="15dp"/>
+        </LinearLayout>  --> 
+                <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+               <ImageButton
+                android:id="@+id/btnLedUsb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_led_states"
+                android:padding="10dp" />
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="USB connection"
+                   android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+               <ImageButton
+                android:id="@+id/btnLedWifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_led_states"
+                android:padding="10dp" />
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Wifi connection"
+                   android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+               <ImageButton
+                android:id="@+id/btnLedTelep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_led_states"
+                android:padding="10dp" />
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Telep. connection"
+                   android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrLog"
+        android:layout_width="410dp"
+        android:layout_height="150dp"
+        android:background="@color/blue1"
+        android:padding="20dp" 
+        android:layout_marginTop="45dp">
+
+        <TextView
+            android:id="@+id/txtLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log:"
+            android:textColor="@color/blue2" />
+    </ScrollView>
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnActivateADB"
+        android:text="Activate ADB"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/relativeLayout1"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="45dp"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:paddingTop="5dp" >
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect" />
+    </LinearLayout>
+
+</RelativeLayout>

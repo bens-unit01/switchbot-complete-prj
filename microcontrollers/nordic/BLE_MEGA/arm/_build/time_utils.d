@@ -1,0 +1,17 @@
+.\_build\time_utils.o: ..\time_utils.c
+.\_build\time_utils.o: ..\time_utils.h
+.\_build\time_utils.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\nrf.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\nrf51.h
+.\_build\time_utils.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+.\_build\time_utils.o: C:\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\_build\time_utils.o: C:\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\system_nrf51.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\nrf51_bitfields.h
+.\_build\time_utils.o: C:\Keil\ARM\CMSIS\Include\core_cm0.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\nrf51_deprecated.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\compiler_abstraction.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\include\sd_common\app_util_platform.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\app_common\app_error.h
+.\_build\time_utils.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\_build\time_utils.o: ..\..\nrf51822_sdk\Include\s120\nrf_error.h
